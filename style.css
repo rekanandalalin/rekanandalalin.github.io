@@ -1,0 +1,190 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fcfcfc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Navigasi (Navbar) --- */
+.navbar {
+    display: flex;
+    background-color: #050505;
+    color: #fff;
+    height: 70px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Aksen diagonal biru di logo seperti pada gambar */
+.logo-container {
+    background-color: #006699; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 50px 0 30px;
+    /* Membuat potongan miring di sebelah kanan */
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    width: 320px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin-left: auto;
+    padding-right: 40px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #006699;
+}
+
+/* --- Hero / Banner --- */
+.hero {
+    /* Menggunakan gambar placeholder jalan raya, bisa Anda ganti URL-nya */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1920&q=80') center/cover;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 56px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* --- Pengaturan Section Umum --- */
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #444;
+}
+
+/* --- Kartu Layanan (Produk) --- */
+.cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    padding: 30px;
+    border-top: 4px solid #006699;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.card h3 {
+    color: #006699;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* --- Tentang Kami --- */
+.about {
+    background-color: #fff;
+}
+
+.ahli-list {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.ahli-list li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* --- Footer & Tombol --- */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #006699;
+    color: #fff;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background-color: #004d73;
+}
+
+/* --- Responsif untuk HP --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+    .logo-container {
+        width: 100%;
+        clip-path: none;
+        justify-content: center;
+        padding: 15px;
+    }
+    .nav-links {
+        margin: 0;
+        padding: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
