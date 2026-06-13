@@ -10,10 +10,10 @@
 <body>
 
     <nav class="navbar">
-<div class="logo-area">
-    <img src="logo.png" alt="Logo Rekan Andalalin" class="brand-logo">
-    <h1 class="logo-text">Rekan Andalalin</h1>
-</div>
+        <div class="logo-area">
+            <img src="logo.png" alt="Logo Rekan Andalalin" class="brand-logo">
+            <h1 class="logo-text">Rekan Andalalin</h1>
+        </div>
         
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -22,45 +22,44 @@
         </div>
 
         <ul class="nav-links">
-            <li><a href="#beranda" class="nav-item active">BERANDA</a></li>
-            <li><a href="#layanan" class="nav-item">LAYANAN UTAMA</a></li>
-            <li><a href="#dokumen" class="nav-item">DOKUMEN DETAIL</a></li>
-            <li><a href="#proses" class="nav-item">PROSES</a></li>
-            <li><a href="#tim" class="nav-item">TIM</a></li>
-            <li><a href="#kontak" class="nav-item">KONTAK</a></li>
+            <li><a href="#" class="nav-item active">BERANDA</a></li>
+            <li><a href="#" class="nav-item">BERITA</a></li>
+            <li><a href="#seputar-produk" class="nav-item">SEPUTAR PRODUK</a></li>
+            <li><a href="#" class="nav-item">MEKANISME PELAYANAN</a></li>
+            <li><a href="#" class="nav-item">TENAGA AHLI</a></li>
+            <li><a href="#" class="nav-item">TENTANG KAMI</a></li>
+            <li><a href="#" class="nav-item">KONTAK KAMI</a></li>
         </ul>
     </nav>
 
-    <header id="beranda" class="hero-section">
+    <header class="hero-section">
         <div class="hero-content">
             <h2 class="hero-title">Rekan Andalalin</h2>
             <p class="hero-subtitle">Tenaga Ahli Profesional, Terdaftar, Bersertifikat !</p>
         </div>
         
-        <a href="#layanan" class="scroll-down">
+        <a href="#seputar-produk" class="scroll-down">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
         </a>
     </header>
 
-    <main class="dashboard-container">
-        <section id="layanan" class="services-section">
+    <main class="dashboard-container" id="seputar-produk">
+        
+        <section class="services-section">
             <h2 class="section-title">Jasa Konsultan Penyusunan Andalalin</h2>
-            
             <div class="grid-3">
                 <div class="cyber-card">
                     <div class="icon-shape shape-rendah"></div>
                     <h3>Andalalin Bangkitan Rendah</h3>
                     <p>Kriteria Wajib Andalalin dengan Bangkitan Lalu Lintas yang Rendah, Tanpa Pembahasan Dokumen dengan Output Product Pemenuhan Standart Teknis.</p>
                 </div>
-
                 <div class="cyber-card">
                     <div class="icon-shape shape-sedang"></div>
                     <h3>Andalalin Bangkitan Sedang</h3>
                     <p>Kriteria Wajib Andalalin dengan Bangkitan Lalu Lintas yang Sedang, Tanpa Pembahasan Dokumen dengan Output Product Rekomendasi Teknis.</p>
                 </div>
-
                 <div class="cyber-card">
                     <div class="icon-shape shape-tinggi"></div>
                     <h3>Andalalin Bangkitan Tinggi</h3>
@@ -68,36 +67,22 @@
                 </div>
             </div>
         </section>
+
+        <section class="extra-services">
+            <div class="cyber-card-wide">
+                <h3>Jasa Konsultan Penyusunan Dokumen TERSUS & TUKS</h3>
+                <p>Pembangunan Terminal Khusus (TERSUS) dan Terminal Untuk Kepentingan Sendiri (TUKS) dalam penyelenggaraannya dibutuhkan untuk melayani kepentingan sendiri sesuai dengan usaha pokoknya. Untuk Terminal Khusus (TERSUS) dan Terminal Untuk Kepentingan Sendiri (TUKS) berdasarkan Permenhub Nomor PM 52 Tahun 2021 Tentang Terminal Khusus dan Terminal Untuk Kepentingan Sendiri didalam Pasal 5, Pasal 11, dan Pasal 20 dalam pembangunan dan pengoperasiannya harus berdasarkan hasil kajian dan evaluasi.</p>
+            </div>
+
+            <div class="cyber-card-wide">
+                <h3>Jasa Konsultan Kajian Teknis/Feasibility Study (FS)</h3>
+                <p>Kajian teknis merupakan kegiatan untuk mencari kesesuaian antara rencana asli yang ditunjukan dalam gambar dengan kebutuhan aktual lapangan, sedangkan Studi Kelayakan/Feasibility Study (FS) ialah studi analitis yang mengukur dan mengevaluasi kelayakan proyek. Tujuan dari kegiatan ini adalah untuk mengetahui seberapa layak rencana proyek tersebut. Kelayakan sangat penting karena dapat membantu mempengaruhi persepsi manfaat proyek.</p>
+            </div>
+        </section>
         
-        <section id="dokumen" style="height: 100vh; padding-top: 100px;"><h2 class="section-title">Dokumen Detail</h2></section>
-        <section id="proses" style="height: 100vh; padding-top: 100px;"><h2 class="section-title">Proses</h2></section>
-        <section id="tim" style="height: 100vh; padding-top: 100px;"><h2 class="section-title">Tim Ahli</h2></section>
-        <section id="kontak" style="height: 100vh; padding-top: 100px;"><h2 class="section-title">Kontak Kami</h2></section>
     </main>
 
     <script>
-        // Logika Menu Aktif Saat Scroll
-        const sections = document.querySelectorAll("header, section");
-        const navLinks = document.querySelectorAll(".nav-item");
-
-        window.addEventListener("scroll", () => {
-            let current = "";
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 150) {
-                    current = section.getAttribute("id");
-                }
-            });
-
-            navLinks.forEach((link) => {
-                link.classList.remove("active");
-                if (link.getAttribute("href") === "#" + current) {
-                    link.classList.add("active");
-                }
-            });
-        });
-
-        // Logika Hamburger Menu Mobile
         const hamburger = document.getElementById("hamburger");
         const navMenu = document.querySelector(".nav-links");
 
@@ -105,7 +90,6 @@
             navMenu.classList.toggle("show");
         });
 
-        // Tutup menu otomatis setelah salah satu link di-klik (khusus mobile)
         document.querySelectorAll(".nav-links a").forEach(link => {
             link.addEventListener("click", () => {
                 navMenu.classList.remove("show");
