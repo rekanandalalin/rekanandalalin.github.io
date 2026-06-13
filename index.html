@@ -19,12 +19,12 @@
             <h1 class="logo-text">Rekan Andalalin</h1>
         </div>
         <ul class="nav-links">
-            <li><a href="#beranda">BERANDA</a></li>
-            <li><a href="#layanan" class="active">LAYANAN UTAMA</a></li>
-            <li><a href="#">DOKUMEN DETAIL</a></li>
-            <li><a href="#">PROSES</a></li>
-            <li><a href="#">TIM</a></li>
-            <li><a href="#">KONTAK</a></li>
+            <li><a href="#beranda" class="nav-item active">BERANDA</a></li>
+            <li><a href="#layanan" class="nav-item">LAYANAN UTAMA</a></li>
+            <li><a href="#dokumen" class="nav-item">DOKUMEN DETAIL</a></li>
+            <li><a href="#proses" class="nav-item">PROSES</a></li>
+            <li><a href="#tim" class="nav-item">TIM</a></li>
+            <li><a href="#kontak" class="nav-item">KONTAK</a></li>
         </ul>
     </nav>
 
@@ -65,7 +65,33 @@
                 </div>
             </div>
         </section>
+        
+        <section id="dokumen" style="height: 100vh; padding-top: 100px;"><h2 class="section-title">Dokumen Detail</h2></section>
+        <section id="proses" style="height: 100vh; padding-top: 100px;"><h2 class="section-title">Proses</h2></section>
     </main>
 
+    <script>
+        const sections = document.querySelectorAll("header, section");
+        const navLinks = document.querySelectorAll(".nav-item");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Mengambil ID section yang sedang tampil di layar
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
