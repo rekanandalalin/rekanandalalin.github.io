@@ -22,7 +22,7 @@ html {
 /* --- PERBAIKAN SCROLL --- */
 /* Memberikan jarak pengereman pada semua elemen yang dituju oleh link (yang memiliki ID) */
 [id] {
-    scroll-margin-top: 90px; 
+    scroll-margin-top: 70px; 
 }
 
 body {
