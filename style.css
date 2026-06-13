@@ -17,11 +17,8 @@
 
 html {
     scroll-behavior: smooth;
-    /* scroll-padding-top dihapus dari sini karena kurang stabil di HP */
 }
 
-/* --- PERBAIKAN SCROLL --- */
-/* Menambahkan jarak pengereman 90px dari atas pada semua section agar tidak tertutup navbar 70px */
 section {
     scroll-margin-top: 90px; 
 }
@@ -68,7 +65,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* --- Hamburger Menu (Mobile) --- */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -87,7 +83,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     list-style: none;
     margin-left: auto;
 }
@@ -97,7 +93,7 @@ body {
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
 }
 
@@ -242,6 +238,44 @@ body {
     background: repeating-linear-gradient(0deg, transparent, transparent 6px, var(--text-muted) 6px, var(--text-muted) 8px);
 }
 
+/* --- EXTRA SERVICES (TERSUS/TUKS & FS) --- */
+.extra-services {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.cyber-card-wide {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 12px;
+    padding: 50px;
+    text-align: center; /* Membuat teks rata tengah */
+    transition: all 0.3s ease;
+}
+
+.cyber-card-wide:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.cyber-card-wide h3 {
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.cyber-card-wide p {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto; /* Memastikan paragraf tetap di tengah */
+}
+
 /* --- RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 900px) {
     .navbar {
@@ -249,17 +283,9 @@ body {
         justify-content: space-between;
     }
     
-    .logo-text {
-        font-size: 20px;
-    }
-    
-    .brand-logo {
-        height: 28px; 
-    }
-
-    .hamburger {
-        display: flex; 
-    }
+    .logo-text { font-size: 20px; }
+    .brand-logo { height: 28px; }
+    .hamburger { display: flex; }
 
     .nav-links {
         position: absolute;
@@ -274,14 +300,8 @@ body {
         border-bottom: 1px solid var(--border-dim);
     }
 
-    .nav-links.show {
-        left: 0; 
-    }
-
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
+    .nav-links.show { left: 0; }
+    .nav-links li { width: 100%; text-align: center; }
 
     .nav-links a {
         display: block;
@@ -290,30 +310,23 @@ body {
         font-size: 15px;
     }
 
-    .hero-title { 
-        font-size: 36px; 
-    }
+    .hero-title { font-size: 36px; }
+    .hero-subtitle { font-size: 16px; }
     
-    .hero-subtitle { 
-        font-size: 16px; 
-    }
+    .dashboard-container { padding: 40px 20px; }
+    .section-title { font-size: 28px; margin-bottom: 40px; }
     
-    .dashboard-container { 
-        /* Padding atas disesuaikan agar tidak menumpuk dengan scroll-margin */
-        padding: 40px 20px; 
+    .grid-3 { grid-template-columns: 1fr; gap: 20px; }
+    .cyber-card { padding: 25px 20px; }
+
+    /* Responsif untuk Card Ekstra */
+    .cyber-card-wide {
+        padding: 30px 20px;
     }
-    
-    .section-title { 
-        font-size: 28px; 
-        margin-bottom: 40px; 
+    .cyber-card-wide h3 {
+        font-size: 22px;
     }
-    
-    .grid-3 { 
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .cyber-card {
-        padding: 25px 20px;
+    .cyber-card-wide p {
+        font-size: 14px;
     }
 }
