@@ -3,63 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekan Andalalin - Jasa Konsultan</title>
+    <title>Rekan Andalalin - Arsitek Masa Depan Lalu Lintas</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
+    <nav class="navbar top-glass">
         <div class="logo-area">
+            <span class="logo-icon">🌐</span>
             <h1 class="logo-text">Rekan Andalalin</h1>
         </div>
         <ul class="nav-links">
             <li><a href="#beranda">BERANDA</a></li>
-            <li><a href="#">BERITA</a></li>
-            <li><a href="#layanan">SEPUTAR PRODUK</a></li>
-            <li><a href="#">MEKANISME PELAYANAN</a></li>
-            <li><a href="#">TENAGA AHLI</a></li>
-            <li><a href="#">TENTANG KAMI</a></li>
-            <li><a href="#">KONTAK KAMI</a></li>
+            <li><a href="#layanan" class="active">LAYANAN UTAMA</a></li>
+            <li><a href="#dokumen">DOKUMEN DETAIL</a></li>
+            <li><a href="#proses">PROSES</a></li>
+            <li><a href="#tim">TIM</a></li>
+            <li><a href="#kontak">KONTAK</a></li>
         </ul>
     </nav>
 
-    <header id="beranda" class="hero-section">
-        <div class="hero-content">
-            <h2 class="hero-title">Rekan Andalalin</h2>
-            <p class="hero-subtitle">Tenaga Ahli Profesional, Terdaftar, Bersertifikat !</p>
+    <header id="beranda" class="hero-cyber">
+        <div class="hud-overlay">
+            <div class="hud-text top-left">Coordinates:<br>N 00° 33' 20.08"<br>E 100° 22' 40.11"</div>
+            <div class="hud-text top-right">Data Packet Transfer<br><span class="neon-bar"></span> 100%</div>
         </div>
-        
-        <a href="#layanan" class="scroll-down">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-        </a>
+        <div class="hero-content">
+            <h2 class="glitch-title">Rekan Andalalin</h2>
+            <p class="subtitle">Arsitek Masa Depan Lalu Lintas</p>
+        </div>
     </header>
 
     <main class="dashboard-container">
-        <section id="layanan" class="services-section">
-            <h2 class="section-title">Jasa Konsultan Penyusunan Andalalin</h2>
+        
+        <section id="layanan" class="grid-3">
+            <div class="cyber-card dark">
+                <div class="icon-placeholder shape-rendah"></div>
+                <h3>Andalalin Kategori Rendah</h3>
+                <p>Pemenuhan Standar Teknis dengan Bangkitan Lalu Lintas Rendah tanpa pembahasan ekstensif.</p>
+            </div>
+            <div class="cyber-card dark">
+                <div class="icon-placeholder shape-sedang"></div>
+                <h3>Andalalin Kategori Sedang</h3>
+                <p>Penyusunan Dokumen Rekomendasi Teknis Andalalin untuk skala bangkitan menengah.</p>
+            </div>
+            <div class="cyber-card dark">
+                <div class="icon-placeholder shape-tinggi"></div>
+                <h3>Andalalin Kategori Tinggi</h3>
+                <p>Penyusunan Dokumen Andalalin komprehensif dengan pembahasan Tim Evaluasi Kemenhub.</p>
+            </div>
+        </section>
+
+        <section class="dashboard-main-grid">
             
-            <div class="grid-3">
-                <div class="cyber-card dark">
-                    <div class="icon-line shape-rendah"></div>
-                    <h3>Andalalin Bangkitan Rendah</h3>
-                    <p>Kriteria Wajib Andalalin dengan Bangkitan Lalu Lintas yang Rendah, Tanpa Pembahasan Dokumen dengan Output Product Pemenuhan Standart Teknis.</p>
-                </div>
-
-                <div class="cyber-card dark active-card">
-                    <div class="icon-line shape-sedang"></div>
-                    <h3>Andalalin Bangkitan Sedang</h3>
-                    <p>Kriteria Wajib Andalalin dengan Bangkitan Lalu Lintas yang Sedang, Tanpa Pembahasan Dokumen dengan Output Product Rekomendasi Teknis.</p>
-                </div>
-
-                <div class="cyber-card dark">
-                    <div class="icon-line shape-tinggi"></div>
-                    <h3>Andalalin Bangkitan Tinggi</h3>
-                    <p>Kriteria Wajib Andalalin dengan Bangkitan Lalu Lintas yang Tinggi, Adanya Pembahasan Dokumen dengan Output Product Dokumen Andalalin.</p>
+            <div class="col-left" id="dokumen">
+                <div class="cyber-card dark data-sheet">
+                    <h3 class="panel-title">2. Data Sheet Detail Dokumen</h3>
+                    <div class="data-lists">
+                        <div class="list-group">
+                            <h4>Kategori Rendah</h4>
+                            <ul>
+                                <li>Kondisi Lalu Lintas</li>
+                                <li>Site Plan & DED</li>
+                                <li>Kegiatan Pemantauan</li>
+                            </ul>
+                        </div>
+                        <div class="list-group">
+                            <h4>Kategori Sedang</h4>
+                            <ul>
+                                <li>Memenuhi Standar Teknis</li>
+                                <li>Menyusun Rekomendasi</li>
+                                <li>Distribusi Perjalanan</li>
+                            </ul>
+                        </div>
+                        <div class="list-group">
+                            <h4>Kategori Tinggi</h4>
+                            <ul>
+                                <li>Menyusun Dokumen Tinggi</li>
+                                <li>Simulasi Kinerja Lalin</li>
+                                <li>Pembebanan Perjalanan</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <div class="col-center" id="proses">
+                <div class="cyber-card light glow-green center-align">
+                    <h3 class="panel-title dark-text">Mekanisme Pelayanan Digital</h3>
+                    <p class="dark-sub">Integrasi online Si Andalan dan SLA 3 Hari</p>
+                    
+                    <div class="flow-diagram">
+                        <div class="node">Integrasi Pendaftaran</div>
+                        <div class="line"></div>
+                        <div class="node active">Proses Sistem</div>
+                        <div class="line"></div>
+                        <div class="node">SLA 3 Hari</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-right" id="tim">
+                <div class="cyber-card light glow-cyan team-panel">
+                    <h3 class="panel-title dark-text center-align">Profil Tim Ahli</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="avatar"></div>
+                            <div class="badge cyan">Sertifikat Kemenhub</div>
+                        </div>
+                        <div class="team-member">
+                            <div class="avatar"></div>
+                            <div class="badge green">Sertifikat Kemenhub</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extra-services grid-2">
+                    <div class="cyber-card dark mini">
+                        <h4>📄 Kajian Teknis/FS</h4>
+                        <p>Studi kelayakan proyek & analisis lapangan.</p>
+                    </div>
+                    <div class="cyber-card dark mini">
+                        <h4>🏗️ TERSUS/TUKS</h4>
+                        <p>Kajian teknis Terminal Khusus Kepentingan Sendiri.</p>
+                    </div>
+                </div>
+
+                <div class="cta-container" id="kontak">
+                    <a href="#" class="btn-neon">
+                        <span class="icon">💬</span> GRATIS KONSULTASI
+                    </a>
+                </div>
+            </div>
+
         </section>
     </main>
 
