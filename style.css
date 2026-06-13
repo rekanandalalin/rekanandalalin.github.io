@@ -17,9 +17,13 @@
 
 html {
     scroll-behavior: smooth;
-    /* INI ADALAH KUNCI PERBAIKANNYA */
-    /* Memberikan jarak henti 100px dari atas agar tidak tertutup navbar */
-    scroll-padding-top: 100px; 
+    /* scroll-padding-top dihapus dari sini karena kurang stabil di HP */
+}
+
+/* --- PERBAIKAN SCROLL --- */
+/* Menambahkan jarak pengereman 90px dari atas pada semua section agar tidak tertutup navbar 70px */
+section {
+    scroll-margin-top: 90px; 
 }
 
 body {
@@ -50,7 +54,6 @@ body {
     gap: 12px;
 }
 
-/* Aturan untuk logo gambar */
 .brand-logo {
     height: 36px;
     width: auto;
@@ -168,7 +171,7 @@ body {
 .dashboard-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 20px 100px; /* Menyesuaikan padding atas agar selaras dengan offset */
+    padding: 60px 20px 100px;
 }
 
 .section-title {
@@ -251,7 +254,7 @@ body {
     }
     
     .brand-logo {
-        height: 28px; /* Disesuaikan agar pas di layar HP */
+        height: 28px; 
     }
 
     .hamburger {
@@ -296,6 +299,7 @@ body {
     }
     
     .dashboard-container { 
+        /* Padding atas disesuaikan agar tidak menumpuk dengan scroll-margin */
         padding: 40px 20px; 
     }
     
