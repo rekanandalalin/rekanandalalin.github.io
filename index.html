@@ -18,6 +18,13 @@
             </svg>
             <h1 class="logo-text">Rekan Andalalin</h1>
         </div>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <ul class="nav-links">
             <li><a href="#beranda" class="nav-item active">BERANDA</a></li>
             <li><a href="#layanan" class="nav-item">LAYANAN UTAMA</a></li>
@@ -52,7 +59,7 @@
                     <p>Kriteria Wajib Andalalin dengan Bangkitan Lalu Lintas yang Rendah, Tanpa Pembahasan Dokumen dengan Output Product Pemenuhan Standart Teknis.</p>
                 </div>
 
-                <div class="cyber-card active-card">
+                <div class="cyber-card">
                     <div class="icon-shape shape-sedang"></div>
                     <h3>Andalalin Bangkitan Sedang</h3>
                     <p>Kriteria Wajib Andalalin dengan Bangkitan Lalu Lintas yang Sedang, Tanpa Pembahasan Dokumen dengan Output Product Rekomendasi Teknis.</p>
@@ -71,6 +78,7 @@
     </main>
 
     <script>
+        // --- Logika Menu Aktif Saat Scroll ---
         const sections = document.querySelectorAll("header, section");
         const navLinks = document.querySelectorAll(".nav-item");
 
@@ -78,8 +86,6 @@
             let current = "";
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                // Mengambil ID section yang sedang tampil di layar
                 if (pageYOffset >= sectionTop - 150) {
                     current = section.getAttribute("id");
                 }
@@ -90,6 +96,21 @@
                 if (link.getAttribute("href") === "#" + current) {
                     link.classList.add("active");
                 }
+            });
+        });
+
+        // --- Logika Hamburger Menu Mobile ---
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+        });
+
+        // Tutup menu otomatis setelah salah satu link di-klik (khusus mobile)
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("show");
             });
         });
     </script>
