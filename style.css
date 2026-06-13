@@ -1,39 +1,41 @@
 /* --- Reset & Variables --- */
 :root {
-    --brand-blue: #006699;
-    --bg-light: #fcfcfc;
-    --text-dark: #333333;
-    --text-muted: #666666;
+    --bg-dark: #0a0f18; /* Warna latar belakang gelap futuristik */
+    --bg-card: #131a26;
+    --neon-cyan: #00f0ff;
+    --brand-blue: #006699; /* Warna biru khas navbar gambar 2 */
+    --text-main: #e2e8f0;
+    --text-muted: #8b9bb4;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Efek scroll halus saat panah diklik */
 }
 
 body {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
     overflow-x: hidden;
-    line-height: 1.6;
 }
 
-/* --- Navigasi --- */
+/* --- Navigasi (Gambar 2) --- */
 .navbar {
     display: flex;
     align-items: center;
-    background-color: #050505;
+    background-color: #000;
     height: 70px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .logo-area {
@@ -43,12 +45,12 @@ body {
     align-items: center;
     padding: 0 60px 0 40px;
     clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
-    width: 320px;
+    width: 350px;
 }
 
 .logo-text {
     font-size: 26px;
-    font-weight: 700;
+    font-weight: 600;
     color: #fff;
 }
 
@@ -61,12 +63,11 @@ body {
 }
 
 .nav-links a {
-    color: #ddd;
+    color: #fff;
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     transition: color 0.3s;
 }
 
@@ -74,11 +75,11 @@ body {
     color: var(--brand-blue);
 }
 
-/* --- Hero Section (Layar Penuh) --- */
+/* --- Hero Section (Gambar 1) --- */
 .hero-section {
     position: relative;
-    height: 100vh; /* Memenuhi 100% tinggi layar */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1920&q=80') center/cover;
+    height: 100vh; /* Layar penuh */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1920&q=80') center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,20 +87,18 @@ body {
 
 .hero-content {
     text-align: center;
-    margin-top: -50px; /* Menyesuaikan posisi teks sedikit ke atas */
 }
 
 .hero-title {
-    font-size: 56px;
+    font-size: 60px;
     color: #fff;
     margin-bottom: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .hero-subtitle {
     font-size: 18px;
-    color: #fff;
+    color: #ddd;
     font-weight: 300;
 }
 
@@ -109,9 +108,9 @@ body {
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -124,8 +123,8 @@ body {
 
 .scroll-down:hover {
     border-color: var(--brand-blue);
-    background-color: var(--brand-blue);
-    color: #fff;
+    color: var(--brand-blue);
+    background: rgba(0, 102, 153, 0.1);
 }
 
 @keyframes bounce {
@@ -135,7 +134,7 @@ body {
 }
 
 /* --- Section Layanan --- */
-.container {
+.dashboard-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 100px 20px;
@@ -144,7 +143,7 @@ body {
 .section-title {
     text-align: center;
     font-size: 32px;
-    color: #444;
+    color: #fff;
     margin-bottom: 60px;
 }
 
@@ -154,30 +153,64 @@ body {
     gap: 30px;
 }
 
-/* --- Tampilan Kartu Putih Bersih --- */
-.card {
-    background-color: #fff;
-    border-top: 4px solid var(--brand-blue); /* Garis biru di atas kartu */
-    border-radius: 4px;
+/* --- Tampilan Kartu (Gambar 3) --- */
+.cyber-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
     padding: 40px 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s ease;
 }
 
-.card:hover {
+.cyber-card:hover, .active-card {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.card h3 {
-    color: var(--brand-blue);
+.cyber-card h3 {
+    color: #fff;
     font-size: 20px;
     margin-bottom: 15px;
 }
 
-.card p {
+.cyber-card p {
     color: var(--text-muted);
     font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Icon / Shape di dalam Kartu */
+.icon-line {
+    margin-bottom: 30px;
+    opacity: 0.7;
+}
+
+.shape-rendah {
+    width: 40px;
+    height: 2px;
+    background-color: var(--text-muted);
+    transform: rotate(45deg);
+    transform-origin: left center;
+}
+
+.shape-sedang {
+    width: 40px;
+    height: 40px;
+    border: 2px dashed var(--text-muted);
+    border-radius: 8px;
+}
+
+.shape-tinggi {
+    width: 50px;
+    height: 40px;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 6px,
+        var(--text-muted) 6px,
+        var(--text-muted) 8px
+    );
 }
 
 /* --- Responsif HP --- */
