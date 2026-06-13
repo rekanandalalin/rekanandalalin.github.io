@@ -47,11 +47,18 @@ body {
     gap: 12px;
 }
 
-.globe-icon {
-    width: 28px;
-    height: 28px;
-    color: var(--neon-cyan);
-    filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.6));
+/* Aturan baru untuk logo gambar */
+.brand-logo {
+    height: 36px; /* Menyesuaikan tinggi agar pas di navbar 70px */
+    width: auto; /* Mempertahankan rasio aspek gambar */
+    object-fit: contain; /* Memastikan gambar muat tanpa terpotong */
+}
+
+/* Pastikan area logo selaras di tengah secara vertikal */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .logo-text {
