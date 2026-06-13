@@ -19,7 +19,9 @@ html {
     scroll-behavior: smooth;
 }
 
-section {
+/* --- PERBAIKAN SCROLL --- */
+/* Memberikan jarak pengereman pada semua elemen yang dituju oleh link (yang memiliki ID) */
+[id] {
     scroll-margin-top: 90px; 
 }
 
