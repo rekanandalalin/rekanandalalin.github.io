@@ -17,6 +17,9 @@
 
 html {
     scroll-behavior: smooth;
+    /* INI ADALAH KUNCI PERBAIKANNYA */
+    /* Memberikan jarak henti 100px dari atas agar tidak tertutup navbar */
+    scroll-padding-top: 100px; 
 }
 
 body {
@@ -47,18 +50,11 @@ body {
     gap: 12px;
 }
 
-/* Aturan baru untuk logo gambar */
+/* Aturan untuk logo gambar */
 .brand-logo {
-    height: 36px; /* Menyesuaikan tinggi agar pas di navbar 70px */
-    width: auto; /* Mempertahankan rasio aspek gambar */
-    object-fit: contain; /* Memastikan gambar muat tanpa terpotong */
-}
-
-/* Pastikan area logo selaras di tengah secara vertikal */
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    height: 36px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-text {
@@ -69,7 +65,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* --- Hamburger Menu (Disembunyikan di Desktop) --- */
+/* --- Hamburger Menu (Mobile) --- */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -172,7 +168,7 @@ body {
 .dashboard-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 20px;
+    padding: 60px 20px 100px; /* Menyesuaikan padding atas agar selaras dengan offset */
 }
 
 .section-title {
@@ -197,7 +193,6 @@ body {
     transition: all 0.3s ease;
 }
 
-.cyber-card.active-card, 
 .cyber-card:hover {
     border-color: var(--neon-cyan);
     box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
@@ -246,31 +241,27 @@ body {
 
 /* --- RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 900px) {
-    /* Navbar Mobile */
     .navbar {
         padding: 0 20px;
-        justify-content: space-between; /* Membuat logo di kiri, hamburger di kanan */
+        justify-content: space-between;
     }
     
     .logo-text {
         font-size: 20px;
     }
     
-    .globe-icon {
-        width: 24px;
-        height: 24px;
+    .brand-logo {
+        height: 28px; /* Disesuaikan agar pas di layar HP */
     }
 
-    /* Munculkan Hamburger, Sembunyikan Menu Default */
     .hamburger {
         display: flex; 
     }
 
-    /* Styling Dropdown Menu Mobile */
     .nav-links {
         position: absolute;
         top: 70px;
-        left: -100%; /* Sembunyikan ke sebelah kiri layar */
+        left: -100%;
         width: 100%;
         background-color: rgba(5, 5, 5, 0.98);
         flex-direction: column;
@@ -280,7 +271,6 @@ body {
         border-bottom: 1px solid var(--border-dim);
     }
 
-    /* Class tambahan jika hamburger diklik */
     .nav-links.show {
         left: 0; 
     }
@@ -297,7 +287,6 @@ body {
         font-size: 15px;
     }
 
-    /* Penyesuaian Ukuran Font & Spasi Konten */
     .hero-title { 
         font-size: 36px; 
     }
@@ -307,7 +296,7 @@ body {
     }
     
     .dashboard-container { 
-        padding: 60px 20px; 
+        padding: 40px 20px; 
     }
     
     .section-title { 
@@ -316,11 +305,11 @@ body {
     }
     
     .grid-3 { 
-        grid-template-columns: 1fr; /* Ubah jadi 1 kolom menyusun ke bawah */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
     
     .cyber-card {
-        padding: 25px 20px; /* Kurangi padding kartu untuk layar kecil */
+        padding: 25px 20px;
     }
 }
