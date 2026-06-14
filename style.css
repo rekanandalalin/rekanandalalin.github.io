@@ -178,23 +178,25 @@ body {
 
 .mechanism-list li { 
     background: rgba(255,255,255,0.02); margin-bottom: 15px; padding: 15px; 
-    border-radius: 8px; display: flex; align-items: center; gap: 15px; 
-    font-size: 14px; border: 1px solid transparent; transition: 0.3s; 
+    border-radius: 8px; display: flex; 
+    align-items: flex-start; /* Diubah: Agar angka sejajar di atas saat teks panjang */
+    gap: 15px; font-size: 14px; border: 1px solid transparent; transition: 0.3s; 
 }
-
-.mechanism-list li:hover { 
-    border-color: rgba(168, 85, 247, 0.3); 
-    background: rgba(168, 85, 247, 0.05); 
-}
+.mechanism-list li:hover { border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.05); }
 
 .mechanism-list span { 
-    background: var(--neon-violet); /* Menggunakan violet */
-    color: #fff; /* Teks angka diubah jadi putih agar kontras dengan ungu */
-    width: 24px; height: 24px; display: flex; align-items: center; 
-    justify-content: center; border-radius: 4px; font-weight: 800; font-size: 12px; 
+    background: var(--neon-violet); color: #fff; width: 24px; height: 24px; 
+    display: flex; align-items: center; justify-content: center; 
+    border-radius: 4px; font-weight: 800; font-size: 12px; 
+    flex: 0 0 24px; /* KUNCI LEBAR: Mencegah gepeng */
+    min-height: 24px; max-height: 24px; /* KUNCI TINGGI: Mencegah melar */
+    margin-top: 2px; /* Menyejajarkan posisi dengan teks */
 }
 
-.arrow-right { color: var(--neon-violet); margin: 0 10px; } /* Menggunakan violet */
+.arrow-right { 
+    color: var(--neon-violet); margin: 0 10px; 
+    align-self: center; /* Memastikan panah tetap di tengah secara vertikal */
+}
 /* Pengaturan Lebar Khusus untuk Menyejajarkan Panah */
 .mech-title { 
     flex: 0 0 280px; /* Memaksa teks ini selalu selebar 280px agar panah sejajar */
@@ -211,7 +213,8 @@ body {
 
 .feature-box p { font-size: 16px; color: #fff; }
 .feature-box strong { color: var(--neon-violet); } /* Menggunakan violet */
-
+/* Class khusus untuk grid yang sejajar rata (seperti Biaya & PNBP) */
+.grid-half { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 /* --- 7. RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 900px) {
     .navbar { padding: 0 20px; justify-content: space-between; }
@@ -220,23 +223,26 @@ body {
     .nav-links a { display: block; padding: 20px; width: 100%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
     .hamburger { display: flex; }
     
-    .grid-2-services, .grid-3 { grid-template-columns: 1fr; }
+    .grid-2-services, .grid-3, .grid-half { grid-template-columns: 1fr; }
     .header-title-sub1 { font-size: 16px; }
     .hero-title { font-size: 36px; }
     
     .dashboard-container { padding: 40px 20px; }
     .cyber-card, .cyber-card-wide { padding: 25px 20px; }
    /* Tampilan HP Khusus Panah Mekanisme */
+    /* Tampilan HP Khusus Panah Mekanisme (Kesamping/Horizontal) */
     .mechanism-list li {
-        flex-wrap: wrap; /* Izinkan elemen turun ke bawah jika sempit */
+        flex-wrap: nowrap; /* Memaksa elemen tetap ke samping, tidak turun */
     }
     .mech-title {
-        flex: 1 1 100%;
-        text-align: center;
+        flex: 1; text-align: left; font-size: 13px; line-height: 1.5;
+    }
+    .mech-desc {
+        flex: 1; text-align: left; font-size: 13px; line-height: 1.5;
     }
     .arrow-right {
-        transform: rotate(90deg); /* Panah menunjuk ke bawah di HP */
-        margin: 5px auto;
+        transform: none !important; /* Membatalkan putaran panah ke bawah */
+        margin: 0 6px;
     }
     .mech-desc {
         width: 100%;
