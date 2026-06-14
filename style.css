@@ -297,30 +297,31 @@ body {
     list-style-type: square;
 }
 /* --- GAYA BARU UNTUK OUTPUT DOKUMEN (HIGHLIGHT) --- */
+/* --- GAYA BARU UNTUK OUTPUT DOKUMEN (HIGHLIGHT) --- */
 .output-highlight {
     font-weight: 700;
-    color: var(--text-light); /* Warna teks utama putih */
-    font-size: 18px !important; /* Membuat ukuran sedikit lebih besar */
-    
-    /* Menghilangkan bullet point default */
+    color: var(--text-light);
+    font-size: 18px !important;
     list-style-type: none !important; 
     
-    /* Gaya Label Futuristik */
-    background: rgba(148, 163, 184, 0.1); /* Latar belakang abu-abu sangat gelap & transparan */
-    border-left: 3px solid var(--neon-cyan); /* Garis cahaya neon di sebelah kiri */
-    padding: 12px 20px; /* Spasi dalam agar terlihat seperti kotak */
-    border-radius: 0 4px 4px 0; /* Rounded corner hanya di sebelah kanan */
+    background: rgba(148, 163, 184, 0.1);
+    border-left: 3px solid var(--neon-cyan);
+    padding: 12px 20px;
+    border-radius: 0 4px 4px 0;
     
-    margin-bottom: 25px; /* Jarak bawah yang lebih lebar */
-    margin-left: -20px; /* Menetralkan margin dari parent <ul> agar sejajar kiri */
+    /* Beri jarak bawah agar tidak menempel saat bersusun */
+    margin-bottom: 15px; 
+    margin-left: -20px; 
     
-    /* Efek Neon Glow Inset */
     box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.05); 
-    display: inline-block; /* Agar lebar kotak menyesuaikan panjang teks */
-    transition: 0.3s; /* Efek halus saat hover */
+    
+    /* --- INI YANG DIUBAH AGAR MENYUSUN KE BAWAH --- */
+    display: block; 
+    width: fit-content; 
+    
+    transition: 0.3s;
 }
 
-/* Tambahkan efek glow tipis saat mouse diarahkan (optional) */
 .output-highlight:hover {
     background: rgba(148, 163, 184, 0.2);
     box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.1);
