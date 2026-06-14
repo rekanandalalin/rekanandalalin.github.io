@@ -64,6 +64,37 @@ body {
 .scroll-down:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); box-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
 @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); } 40% { transform: translateY(-15px) translateX(-50%); } 60% { transform: translateY(-7px) translateX(-50%); } }
 
+/* --- KAPSUL LOGO SERTIFIKASI (HERO) --- */
+.hero-certification {
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+.cert-text {
+    font-size: 12px; 
+    color: var(--neon-cyan); 
+    letter-spacing: 2px; 
+    font-weight: 600; 
+    margin-bottom: 15px; 
+    text-transform: uppercase;
+}
+.glass-pill {
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 40px; 
+    background: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(8px); 
+    padding: 15px 45px; 
+    border-radius: 60px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.glass-logo {
+    height: 75px; 
+    width: auto; 
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.6));
+}
+
 /* --- 4. Layout Grid & Kartu Utama --- */
 .dashboard-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px 100px; }
 .section-title { text-align: center; font-size: 36px; color: #fff; margin-bottom: 60px; font-weight: 600; }
@@ -138,8 +169,8 @@ body {
 .pulse-dot { 
     width: 8px; height: 8px; background-color: var(--neon-cyan); 
     border-radius: 50%; box-shadow: 0 0 10px var(--neon-cyan); animation: pulse 2s infinite; 
-    flex-shrink: 0; /* Mencegah oval */
-    margin-right: 8px; /* Memberikan ruang bebas agar cahaya tidak menabrak teks */
+    flex-shrink: 0; 
+    margin-right: 8px; 
 }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
 
@@ -349,6 +380,20 @@ body {
     .hero-title { font-size: 36px; }
     .dashboard-container { padding: 40px 20px; }
     .cyber-card, .cyber-card-wide { padding: 25px 20px; }
+
+    /* --- PERBAIKAN HP: Kapsul Kaca Logo --- */
+    .glass-pill {
+        gap: 15px;
+        padding: 12px 25px;
+        border-radius: 40px;
+    }
+    .glass-logo {
+        height: 45px;
+    }
+    .cert-text {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
     
     /* --- PERBAIKAN HP: Layout Cerdas Untuk Tabel & List --- */
     .mechanism-list li {
