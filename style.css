@@ -158,7 +158,7 @@ body {
 .list-label { font-weight: 700; color: var(--text-light); width: 110px; flex-shrink: 0; }
 .list-text { flex: 1; line-height: 1.6; }
 
-/* --- TIMELINE STYLE UNTUK RIWAYAT PENDIDIKAN --- */
+/* --- TIMELINE STYLE UNTUK RIWAYAT PENDIDIKAN (TEMA CYAN) --- */
 .timeline-wrapper {
     position: relative;
     margin-top: 25px;
@@ -169,11 +169,11 @@ body {
 .timeline-wrapper::before {
     content: '';
     position: absolute;
-    left: 37px; /* Berada tepat di tengah badge yang lebarnya 75px */
+    left: 37px; 
     top: 15px;
     bottom: 0;
     width: 2px;
-    background: rgba(168, 85, 247, 0.3); /* Garis ungu transparan */
+    background: rgba(0, 240, 255, 0.3); /* Diubah jadi Cyan Transparan */
     z-index: 0;
 }
 
@@ -185,9 +185,9 @@ body {
     bottom: -5px;
     width: 6px;
     height: 6px;
-    background: var(--neon-violet);
+    background: var(--neon-cyan); /* Diubah jadi Cyan */
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--neon-violet);
+    box-shadow: 0 0 10px var(--neon-cyan);
     z-index: 0;
 }
 
@@ -208,15 +208,15 @@ body {
     flex: 0 0 75px;
     width: 75px;
     height: 30px;
-    background: var(--neon-violet);
-    color: #fff;
+    background: var(--neon-cyan); /* Diubah jadi Cyan */
+    color: #0b1120; /* Teks gelap agar kontras dan terbaca jelas */
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 6px;
     font-size: 13px;
-    font-weight: 700;
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+    font-weight: 800;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
 }
 
 .timeline-content {
@@ -229,9 +229,9 @@ body {
 }
 
 .timeline-content:hover {
-    border-color: rgba(168, 85, 247, 0.5);
-    background: rgba(168, 85, 247, 0.05);
-    transform: translateX(5px); /* Efek bergerak maju sedikit saat disentuh mouse */
+    border-color: rgba(0, 240, 255, 0.5); /* Hover Cyan */
+    background: rgba(0, 240, 255, 0.05);
+    transform: translateX(5px); 
 }
 
 .timeline-content strong {
@@ -245,6 +245,50 @@ body {
     font-size: 13px;
     display: block;
     margin-top: 6px;
+}
+
+/* --- GAYA BARU UNTUK LIST DIKLAT AGAR PREMIUM --- */
+.diklat-list {
+    list-style: none;
+    margin-top: 25px;
+    padding: 0;
+}
+
+.diklat-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0.01);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.diklat-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.diklat-list li::before {
+    content: '▹'; /* Ikon panah kecil elegan */
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: var(--neon-cyan);
+    font-size: 20px;
+}
+
+.diklat-list strong {
+    color: var(--neon-cyan);
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.diklat-list span {
+    color: var(--text-muted);
+    font-size: 13.5px;
 }
 /* --- 7. RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 900px) {
