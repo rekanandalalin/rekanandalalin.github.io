@@ -158,7 +158,94 @@ body {
 .list-label { font-weight: 700; color: var(--text-light); width: 110px; flex-shrink: 0; }
 .list-text { flex: 1; line-height: 1.6; }
 
+/* --- TIMELINE STYLE UNTUK RIWAYAT PENDIDIKAN --- */
+.timeline-wrapper {
+    position: relative;
+    margin-top: 25px;
+    padding-bottom: 10px;
+}
 
+/* Garis Vertikal Timeline */
+.timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 37px; /* Berada tepat di tengah badge yang lebarnya 75px */
+    top: 15px;
+    bottom: 0;
+    width: 2px;
+    background: rgba(168, 85, 247, 0.3); /* Garis ungu transparan */
+    z-index: 0;
+}
+
+/* Titik menyala di ujung bawah garis timeline */
+.timeline-wrapper::after {
+    content: '';
+    position: absolute;
+    left: 35px; 
+    bottom: -5px;
+    width: 6px;
+    height: 6px;
+    background: var(--neon-violet);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--neon-violet);
+    z-index: 0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-badge {
+    flex: 0 0 75px;
+    width: 75px;
+    height: 30px;
+    background: var(--neon-violet);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+.timeline-content {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 15px 20px;
+    border-radius: 8px;
+    flex: 1;
+    transition: 0.3s;
+}
+
+.timeline-content:hover {
+    border-color: rgba(168, 85, 247, 0.5);
+    background: rgba(168, 85, 247, 0.05);
+    transform: translateX(5px); /* Efek bergerak maju sedikit saat disentuh mouse */
+}
+
+.timeline-content strong {
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+.timeline-content small {
+    color: var(--text-muted);
+    font-size: 13px;
+    display: block;
+    margin-top: 6px;
+}
 /* --- 7. RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 900px) {
     .navbar { padding: 0 20px; justify-content: space-between; }
