@@ -256,12 +256,14 @@ body {
 
 .diklat-list li {
     position: relative;
-    padding-left: 25px;
+    padding-left: 45px; /* Ruang teks diperlebar agar tidak menabrak segitiga */
+    padding-right: 15px;
     margin-bottom: 20px;
-    background: rgba(255,255,255,0.01);
-    padding-top: 10px;
-    padding-bottom: 10px;
+    background: rgba(255,255,255,0.02); /* Latar belakang sedikit lebih terlihat */
+    padding-top: 15px; /* Jarak atas bawah dilonggarkan */
+    padding-bottom: 15px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px; /* Ujung sudut dihaluskan */
 }
 
 .diklat-list li:last-child {
@@ -270,10 +272,10 @@ body {
 }
 
 .diklat-list li::before {
-    content: '▹'; /* Ikon panah kecil elegan */
+    content: '▹'; 
     position: absolute;
-    left: 0;
-    top: 8px;
+    left: 18px; /* MENGGESER SEGITIGA AGAR TIDAK MEPET KIRI */
+    top: 13px; /* Menyesuaikan tinggi agar sejajar sempurna dengan teks */
     color: var(--neon-cyan);
     font-size: 20px;
 }
