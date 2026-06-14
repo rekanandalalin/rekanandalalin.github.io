@@ -103,11 +103,12 @@
             </div>
         </div>
         <footer class="site-footer">
-        &copy; 2026 <a href="mailto:nopiadintya24@gmail.com" title="Kirim Email ke NAP">NAP</a>. Built with HTML & CSS.
-    </footer>
+            &copy; 2026 <a href="#" id="smart-email" title="Kirim Email ke NAP">NAP</a>. Built with HTML & CSS.
+        </footer>
     </main>
 
     <script>
+        // 1. Script Hamburger Menu
         const hamburger = document.getElementById("hamburger");
         const navMenu = document.querySelector(".nav-links");
 
@@ -120,6 +121,20 @@
                 navMenu.classList.remove("show");
             });
         });
+
+        // 2. Script Smart Email Link (Deteksi HP vs PC)
+        const emailLink = document.getElementById("smart-email");
+        const emailAddress = "nopiadintya24@gmail.com";
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            // Jika pengunjung pakai HP -> Buka Aplikasi Email
+            emailLink.href = "mailto:" + emailAddress;
+        } else {
+            // Jika pengunjung pakai PC/Laptop -> Buka Tab Baru Web Gmail
+            emailLink.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + emailAddress;
+            emailLink.target = "_blank";
+        }
     </script>
 </body>
 </html>
