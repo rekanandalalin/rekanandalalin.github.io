@@ -125,19 +125,70 @@ body {
 .output-highlight:hover { background: rgba(148, 163, 184, 0.2); box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.1); }
 
 /* --- 6. HALAMAN MEKANISME PELAYANAN --- */
-.main-header-panel { background: linear-gradient(90deg, rgba(168, 85, 247, 0.1) 0%, rgba(13, 17, 32, 0.9) 100%); border-left: 4px solid var(--neon-cyan); padding: 30px; margin-bottom: 40px; position: relative; overflow: hidden; }
+.main-header-panel { 
+    background: linear-gradient(90deg, rgba(168, 85, 247, 0.1) 0%, rgba(13, 17, 32, 0.9) 100%); 
+    border-left: 4px solid var(--neon-violet); /* Menggunakan violet */
+    padding: 30px; 
+    margin-bottom: 40px; 
+    position: relative; 
+    overflow: hidden; 
+}
+
 .header-title-sub1 { font-size: 22px; color: #fff; letter-spacing: 1px; font-weight: 700; }
-.sub2-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 8px 15px; border: 1px solid var(--border-dim); border-radius: 4px; font-size: 14px; font-weight: 700; color: var(--neon-cyan); margin-bottom: 25px; }
-.pulse-dot { width: 8px; height: 8px; background-color: var(--neon-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--neon-cyan); animation: pulse 2s infinite; }
-@keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
+
+.sub2-badge { 
+    display: inline-flex; align-items: center; gap: 10px; 
+    background: rgba(255,255,255,0.05); padding: 8px 15px; 
+    border: 1px solid var(--border-dim); border-radius: 4px; 
+    font-size: 14px; font-weight: 700; 
+    color: var(--neon-violet); /* Menggunakan violet */
+    margin-bottom: 25px; 
+}
+
+.pulse-dot { 
+    width: 8px; height: 8px; 
+    background-color: var(--neon-violet); /* Menggunakan violet */
+    border-radius: 50%; 
+    box-shadow: 0 0 10px var(--neon-violet); 
+    animation: pulse 2s infinite; 
+}
+
+@keyframes pulse { 
+    0% { transform: scale(1); opacity: 1; } 
+    50% { transform: scale(1.5); opacity: 0.5; } 
+    100% { transform: scale(1); opacity: 1; } 
+}
+
 .mechanism-list { list-style: none; margin-top: 20px; }
-.mechanism-list li { background: rgba(255,255,255,0.02); margin-bottom: 15px; padding: 15px; border-radius: 8px; display: flex; align-items: center; gap: 15px; font-size: 14px; border: 1px solid transparent; transition: 0.3s; }
-.mechanism-list li:hover { border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.05); }
-.mechanism-list span { background: var(--neon-cyan); color: #000; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 800; font-size: 12px; }
-.arrow-right { color: var(--neon-cyan); margin: 0 10px; }
-.feature-box { background: rgba(168, 85, 247, 0.05); border: 1px dashed var(--neon-cyan); padding: 25px; border-radius: 12px; text-align: center; }
+
+.mechanism-list li { 
+    background: rgba(255,255,255,0.02); margin-bottom: 15px; padding: 15px; 
+    border-radius: 8px; display: flex; align-items: center; gap: 15px; 
+    font-size: 14px; border: 1px solid transparent; transition: 0.3s; 
+}
+
+.mechanism-list li:hover { 
+    border-color: rgba(168, 85, 247, 0.3); 
+    background: rgba(168, 85, 247, 0.05); 
+}
+
+.mechanism-list span { 
+    background: var(--neon-violet); /* Menggunakan violet */
+    color: #fff; /* Teks angka diubah jadi putih agar kontras dengan ungu */
+    width: 24px; height: 24px; display: flex; align-items: center; 
+    justify-content: center; border-radius: 4px; font-weight: 800; font-size: 12px; 
+}
+
+.arrow-right { color: var(--neon-violet); margin: 0 10px; } /* Menggunakan violet */
+
+.feature-box { 
+    background: rgba(168, 85, 247, 0.05); 
+    border: 1px dashed var(--neon-violet); /* Menggunakan violet */
+    padding: 25px; border-radius: 12px; text-align: center; 
+}
+
 .feature-box p { font-size: 16px; color: #fff; }
-.feature-box strong { color: var(--neon-cyan); }
+.feature-box strong { color: var(--neon-violet); } /* Menggunakan violet */
 
 /* --- 7. RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 900px) {
