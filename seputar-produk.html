@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seputar Produk - Rekan Andalalin</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-area">
+            <img src="logo.png" alt="Logo Rekan Andalalin" class="brand-logo">
+            <h1 class="logo-text">Rekan Andalalin</h1>
+        </div>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-item">BERANDA</a></li>
+            <li><a href="#" class="nav-item">BERITA</a></li>
+            <li><a href="#" class="nav-item active">SEPUTAR PRODUK</a></li>
+            <li><a href="#" class="nav-item">MEKANISME PELAYANAN</a></li>
+            <li><a href="#" class="nav-item">TENAGA AHLI</a></li>
+            <li><a href="#" class="nav-item">TENTANG KAMI</a></li>
+            <li><a href="#" class="nav-item">KONTAK KAMI</a></li>
+        </ul>
+    </nav>
+
+    <main class="dashboard-container" style="padding-top: 120px;">
+        <h2 class="section-title">Seputar Produk</h2>
+
+        <div class="extra-services">
+            
+            <div class="cyber-card-wide text-left">
+                <h3 class="cyan-text">Muatan Dokumen Hasil Analisis Dampak Lalu Lintas untuk Bangkitan Lalu Lintas Rendah;</h3>
+                <ul class="custom-list">
+                    <li>Standart Teknis Andalalin;</li>
+                </ul>
+                <ol class="custom-number-list">
+                    <li>Gambaran Umum Lokasi yang Akan dibangun atau dikembangkan;</li>
+                    <li>Tata Letak Bangunan (Site Plan) dan DED Bangunan yang diusulkan;</li>
+                    <li>Kesesuaian Tata Ruang dan/atau Izin Pemanfaatan Ruang;</li>
+                    <li>Rincian Tanggung Jawab (Mitigasi) Penanganan Dampak;</li>
+                    <li>Rencana Pemantauan dan Evaluasi Penanganan Dampak Lalu Lintas;</li>
+                    <li>Standart Rekomendasi dan Implementasi Penanganan Dampak Lalu Lintas.</li>
+                </ol>
+                <div class="note-box">
+                    <strong>Note :</strong> Pelaku usaha hanya melakukan pendaftaran perizinan dan mengikuti standart teknis penanganan dampak sesuai dengan ketentuan yang telah ditetapkan. (Tanpa Pembahasan dan hanya Self Declaration Pelaku usaha).
+                </div>
+            </div>
+
+            <div class="cyber-card-wide text-left">
+                <h3 class="cyan-text">Muatan Dokumen Hasil Analisis Dampak Lalu Lintas untuk Bangkitan Lalu Lintas Sedang;</h3>
+                <ul class="custom-list">
+                    <li>Rekomendasi Teknis Andalalin;</li>
+                </ul>
+                <ol class="custom-number-list">
+                    <li>Kondisi Lalu Lintas dan Angkutan Jalan;</li>
+                    <li>Pemilihan Moda;</li>
+                    <li>Gambaran Umum Lokasi yang Akan dibangun atau dikembangkan;</li>
+                    <li>Rencana Pemantauan dan Evaluasi;</li>
+                    <li>Bangkitan/Tarikan Lalu Lintas dan Angkutan Jalan;</li>
+                    <li>Distribusi Perjalanan;</li>
+                    <li>Simulasi Kinerja Lalu Lintas;</li>
+                    <li>Rincian Tanggung Jawab (Mitigasi);</li>
+                    <li>Rekomendasi dan Implementasi.</li>
+                </ol>
+                <div class="note-box">
+                    <strong>Note :</strong> Hanya dilakukan pemeriksaan kesesuaian dokumen dan administrasi oleh tim administrasi penilai dokumen andalalin (Tanpa Pembahasan Dokumen).
+                </div>
+            </div>
+
+            <div class="cyber-card-wide text-left">
+                <h3 class="cyan-text">Muatan Dokumen Hasil Analisis Dampak Lalu Lintas untuk Bangkitan Lalu Lintas Tinggi;</h3>
+                <ul class="custom-list">
+                    <li>Dokumen Andalalin;</li>
+                </ul>
+                <ol class="custom-number-list">
+                    <li>Perencanaan dan Metodologi;</li>
+                    <li>Kondisi Lalu Lintas dan Angkutan Jalan;</li>
+                    <li>Gambaran Umum Lokasi yang Akan dibangun atau dikembangkan;</li>
+                    <li>Pemilihan Moda;</li>
+                    <li>Rencana dan Pemantauan Evaluasi;</li>
+                    <li>Pembebanan Perjalanan;</li>
+                    <li>Bangkitan/Tarikan Lalu Lintas dan Angkutan Jalan;</li>
+                    <li>Simulasi Kinerja Lalu Lintas;</li>
+                    <li>Rincian Tanggung Jawab (Mitigasi);</li>
+                    <li>Distribusi Perjalanan;</li>
+                    <li>Rekomendasi dan Implementasi.</li>
+                </ol>
+                <div class="note-box">
+                    <strong>Note :</strong> Dilakukan penilaian oleh Tim Evaluasi Penilai Andalalin yang berasal dari unsur Perhubungan.
+                </div>
+                <ul class="custom-list" style="margin-top: 15px;">
+                    <li>Dokumen TERSUS dan TUKS berisikan Kajian Teknis dan Rencana Teknis TERSUS dan TUKS.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("show");
+            });
+        });
+    </script>
+</body>
+</html>
