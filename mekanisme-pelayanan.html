@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mekanisme Pelayanan - Rekan Andalalin</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-violet"> <nav class="navbar">
+        <div class="logo-area">
+            <img src="logo.png" alt="Logo Rekan Andalalin" class="brand-logo">
+            <h1 class="logo-text">Rekan Andalalin</h1>
+        </div>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-item">BERANDA</a></li>
+            <li><a href="#" class="nav-item">BERITA</a></li>
+            <li><a href="seputar-produk.html" class="nav-item">SEPUTAR PRODUK</a></li>
+            <li><a href="#" class="nav-item active">MEKANISME PELAYANAN</a></li>
+            <li><a href="#" class="nav-item">TENAGA AHLI</a></li>
+            <li><a href="#" class="nav-item">TENTANG KAMI</a></li>
+            <li><a href="#" class="nav-item">KONTAK KAMI</a></li>
+        </ul>
+    </nav>
+
+    <main class="dashboard-container" style="padding-top: 120px;">
+        <h2 class="section-title">Mekanisme Pelayanan</h2>
+
+        <div class="extra-services">
+            
+            <div class="main-header-panel">
+                <div class="glitch-effect"></div>
+                <h3 class="header-title-sub1">ANDALALIN PERIZINAN TEKNIS TINGKAT RESIKO MENENGAH TINGGI;</h3>
+            </div>
+
+            <div class="grid-2-services">
+                
+                <div class="cyber-card-wide text-left">
+                    <div class="sub2-badge">
+                        <span class="pulse-dot"></span> KRITERIA PERIZINAN
+                    </div>
+                    <p class="intro-text">Kriteria kegiatan yang wajib Andalalin disesuaikan dengan skala bangkitan/tarikan lalu lintas yang ditimbulkan yaitu menjadi;</p>
+                    <ul class="mechanism-list">
+                        <li><span>1</span> Kegiatan Bangkitan Lalu Lintas Rendah <i class="arrow-right">➜</i> <strong>Pemenuhan Standart Teknis</strong></li>
+                        <li><span>2</span> Kegiatan Bangkitan Lalu Lintas Sedang <i class="arrow-right">➜</i> <strong>Penyusunan Rekomendasi Teknis</strong></li>
+                        <li><span>3</span> Kegiatan Bangkitan Lalu Lintas Tinggi <i class="arrow-right">➜</i> <strong>Penyusunan Dokumen Andalalin</strong></li>
+                    </ul>
+                </div>
+
+                <div class="cyber-card-wide text-left">
+                    <div class="sub2-badge">
+                        <span class="pulse-dot"></span> MEKANISME PERIZINAN
+                    </div>
+                    <div class="feature-box">
+                        <p>Dapat dilaksanakan secara online melalui sistem <strong>Si Andalan</strong> yang terintegrasi dengan <strong>OSS</strong> dan <strong>Persetujuan Lingkungan (AMDAL)</strong>.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("show");
+            });
+        });
+    </script>
+</body>
+</html>
