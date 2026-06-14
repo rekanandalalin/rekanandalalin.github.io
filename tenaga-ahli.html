@@ -10,10 +10,10 @@
 </head>
 <body> 
     <nav class="navbar">
-        <a href="/" class="logo-area" style="text-decoration: none;">
+        <div class="logo-area">
             <img src="logo.png" alt="Logo Rekan Andalalin" class="brand-logo">
             <h1 class="logo-text">Rekan Andalalin</h1>
-        </a>
+        </div>
         
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -22,26 +22,27 @@
         </div>
 
         <ul class="nav-links">
-            <li><a href="/" class="nav-item">BERANDA</a></li>
+            <li><a href="index.html" class="nav-item">BERANDA</a></li>
             <li><a href="#" class="nav-item">BERITA</a></li>
-            <li><a href="/seputar-produk" class="nav-item">SEPUTAR PRODUK</a></li>
-            <li><a href="/mekanisme-pelayanan" class="nav-item">MEKANISME PELAYANAN</a></li>
-            <li><a href="/tenaga-ahli" class="nav-item active">TENAGA AHLI</a></li>
-            <li><a href="/tentang-kami" class="nav-item">TENTANG KAMI</a></li>
+            <li><a href="seputar-produk.html" class="nav-item">SEPUTAR PRODUK</a></li>
+            <li><a href="mekanisme-pelayanan.html" class="nav-item">MEKANISME PELAYANAN</a></li>
+            <li><a href="tenaga-ahli.html" class="nav-item active">TENAGA AHLI</a></li>
+            <li><a href="tentang-kami.html" class="nav-item">TENTANG KAMI</a></li>
             <li><a href="#" class="nav-item">KONTAK KAMI</a></li>
         </ul>
     </nav>
 
     <main class="dashboard-container" style="padding-top: 120px;">
         <div style="text-align: center; margin-bottom: 30px;">
-            <h2 class="section-title" style="margin-bottom: 60px;">Profil Tenaga Ahli</h2>
+            <h2 class="section-title" style="margin-bottom: 10px;">Profil Tenaga Ahli</h2>
+            <img src="logo.png" alt="Rekan Andalalin Logo" style="width: 80px; height: auto; filter: drop-shadow(0 0 8px var(--neon-cyan));">
         </div>
 
         <div class="extra-services">
             
             <div class="main-header-panel" style="text-align: center;">
                 <div class="glitch-effect"></div>
-                <h3 class="header-title-sub1" style="text-transform: uppercase; letter-spacing: 2px;">Ir. HERVIAN HANDIKA SUGASTA, S.T., M.T.</h3>
+                <h3 class="header-title-sub1" style="letter-spacing: 1px;">Ir. Hervian Handika Sugasta, S.T., M.T.</h3>
             </div>
 
             <div class="grid-2-services">
@@ -113,15 +114,15 @@
                     </div>
                     <ul class="mechanism-list">
                         <li>
-                            <div class="list-label" style="width: 60px; color: var(--neon-cyan);">PII</div>
+                            <div class="list-label" style="color: var(--neon-cyan);">PII</div>
                             <div class="list-text">Anggota Persatuan Insinyur Indonesia <br><small style="color: var(--text-muted);">(2021 s/d sekarang)</small></div>
                         </li>
                         <li>
-                            <div class="list-label" style="width: 60px; color: var(--neon-cyan);">FIM</div>
+                            <div class="list-label" style="color: var(--neon-cyan);">FIM</div>
                             <div class="list-text">Anggota Forum Insinyur Muda <br><small style="color: var(--text-muted);">(2023 s/d sekarang)</small></div>
                         </li>
                         <li>
-                            <div class="list-label" style="width: 60px; color: var(--neon-cyan);">PAPTI</div>
+                            <div class="list-label" style="color: var(--neon-cyan);">PAPTI</div>
                             <div class="list-text">Anggota Perkumpulan Ahli Pengkaji Teknis Indonesia <br><small style="color: var(--text-muted);">(2023 s/d sekarang)</small></div>
                         </li>
                     </ul>
@@ -136,15 +137,17 @@
                         <a href="#" style="display: inline-block; margin-top: 20px; color: var(--neon-cyan); text-decoration: none; font-weight: 700; font-size: 14px; padding-bottom: 5px; border-bottom: 2px solid var(--neon-cyan);">LIHAT PORTOFOLIO LENGKAP ➜</a>
                     </div>
                 </div>
+
             </div>
+
         </div>
+        
         <footer class="site-footer">
-            &copy; 2026 <a href="#" id="smart-email" title="Kirim Email ke NAP">NAP</a>. Built with HTML & CSS.
+            &copy; 2026 <a href="mailto:nopiadintya24@gmail.com" title="Kirim Email ke NAP">NAP</a>. Built with HTML & CSS.
         </footer>
     </main>
 
-   <script>
-        // 1. Script Hamburger Menu
+    <script>
         const hamburger = document.getElementById("hamburger");
         const navMenu = document.querySelector(".nav-links");
 
@@ -157,20 +160,6 @@
                 navMenu.classList.remove("show");
             });
         });
-
-        // 2. Script Smart Email Link (Deteksi HP vs PC)
-        const emailLink = document.getElementById("smart-email");
-        const emailAddress = "nopiadintya24@gmail.com";
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-        if (isMobile) {
-            // Jika pengunjung pakai HP -> Buka Aplikasi Email
-            emailLink.href = "mailto:" + emailAddress;
-        } else {
-            // Jika pengunjung pakai PC/Laptop -> Buka Tab Baru Web Gmail
-            emailLink.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + emailAddress;
-            emailLink.target = "_blank";
-        }
     </script>
 </body>
 </html>
