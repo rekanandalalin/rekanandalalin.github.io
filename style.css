@@ -13,7 +13,7 @@
     --border-dim: rgba(255, 255, 255, 0.1);
 }
 
-/* Override Tema untuk Mekanisme Pelayanan */
+/* Override Tema untuk halaman tertentu */
 .theme-violet {
     --neon-cyan: var(--neon-violet); 
 }
@@ -69,7 +69,6 @@ body {
 .section-title { text-align: center; font-size: 36px; color: #fff; margin-bottom: 60px; font-weight: 600; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .grid-2-services { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; }
-/* Class khusus untuk grid yang sejajar rata (seperti Biaya & PNBP) */
 .grid-half { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 
 .cyber-card { background-color: var(--bg-card); border: 1px solid var(--border-dim); border-radius: 12px; padding: 40px 30px; transition: all 0.3s ease; }
@@ -80,23 +79,10 @@ body {
 .cyber-card-wide { background-color: var(--bg-card); border: 1px solid var(--border-dim); border-radius: 12px; padding: 40px; transition: 0.3s; }
 .cyber-card-wide:hover { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 240, 255, 0.1); transform: translateY(-5px); }
 
-/* --- Pemisah dan Jarak Teks untuk Kartu Lebar --- */
-.cyber-card-wide h3 {
-    font-size: 24px;
-    color: #fff;
-    font-weight: 600;
-    margin-bottom: 20px;       
-    padding-bottom: 15px;      
-    border-bottom: 1px solid rgba(0, 240, 255, 0.2); 
-}
-.cyber-card-wide p {
-    color: var(--text-muted);
-    font-size: 15px;
-    line-height: 1.8;          
-}
+.cyber-card-wide h3 { font-size: 24px; color: #fff; font-weight: 600; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid rgba(0, 240, 255, 0.2); }
+.cyber-card-wide p { color: var(--text-muted); font-size: 15px; line-height: 1.8; }
 .text-left { text-align: left !important; }
 
-/* KODE YANG DITAMBAHKAN KEMBALI: Jarak Antar Section */
 .extra-services { display: flex; flex-direction: column; gap: 30px; margin-top: 30px; }
 
 /* --- IKON SHAPE DI BERANDA --- */
@@ -115,10 +101,10 @@ body {
 .output-highlight { font-weight: 700; color: var(--text-light); font-size: 18px !important; list-style-type: none !important; background: rgba(148, 163, 184, 0.1); border-left: 3px solid var(--neon-cyan); padding: 12px 20px; border-radius: 0 4px 4px 0; margin-bottom: 15px; margin-left: -20px; display: block; width: fit-content; transition: 0.3s; }
 .output-highlight:hover { background: rgba(148, 163, 184, 0.2); box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.1); }
 
-/* --- 6. HALAMAN MEKANISME PELAYANAN --- */
+/* --- 6. GAYA KOMPONEN KONTEN KHUSUS --- */
 .main-header-panel { 
-    background: linear-gradient(90deg, rgba(168, 85, 247, 0.1) 0%, rgba(13, 17, 32, 0.9) 100%); 
-    border-left: 4px solid var(--neon-violet); 
+    background: linear-gradient(90deg, rgba(0, 240, 255, 0.05) 0%, rgba(13, 17, 32, 0.9) 100%); 
+    border-left: 4px solid var(--neon-cyan); 
     padding: 30px; margin-bottom: 40px; position: relative; overflow: hidden; 
 }
 .header-title-sub1 { font-size: 22px; color: #fff; letter-spacing: 1px; font-weight: 700; }
@@ -126,11 +112,14 @@ body {
     display: inline-flex; align-items: center; gap: 10px; 
     background: rgba(255,255,255,0.05); padding: 8px 15px; 
     border: 1px solid var(--border-dim); border-radius: 4px; 
-    font-size: 14px; font-weight: 700; color: var(--neon-violet); margin-bottom: 25px; 
+    font-size: 14px; font-weight: 700; color: var(--neon-cyan); margin-bottom: 25px; 
 }
+
+/* OBAT ANTI OVAL UNTUK TITIK */
 .pulse-dot { 
-    width: 8px; height: 8px; background-color: var(--neon-violet); 
-    border-radius: 50%; box-shadow: 0 0 10px var(--neon-violet); animation: pulse 2s infinite; 
+    width: 8px; height: 8px; background-color: var(--neon-cyan); 
+    border-radius: 50%; box-shadow: 0 0 10px var(--neon-cyan); animation: pulse 2s infinite; 
+    flex-shrink: 0; /* INI KUNCINYA AGAR TETAP BULAT SEMPURNA */
 }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
 
@@ -140,23 +129,32 @@ body {
     border-radius: 8px; display: flex; align-items: flex-start; gap: 15px; 
     font-size: 14px; border: 1px solid transparent; transition: 0.3s; flex-wrap: wrap; 
 }
-.mechanism-list li:hover { border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.05); }
+.mechanism-list li:hover { border-color: rgba(0, 240, 255, 0.3); background: rgba(0, 240, 255, 0.05); }
 
+/* Badge Angka Default */
 .mechanism-list span { 
-    background: var(--neon-violet); color: #fff; display: flex; align-items: center; justify-content: center; 
+    background: var(--neon-cyan); color: #000; display: flex; align-items: center; justify-content: center; 
     border-radius: 4px; font-weight: 800; font-size: 12px; flex: 0 0 24px; min-height: 24px; max-height: 24px; margin-top: 2px; 
 }
 
-.arrow-right { color: var(--neon-violet); margin: 0 10px; align-self: center; flex-shrink: 0; }
+/* --- BADGE UNGU S1 S2 PROFESI (SERAGAM & PRESISI) --- */
+.mechanism-list span.badge-wide {
+    flex: 0 0 75px; /* Lebar dikunci persis 75px */
+    max-width: 75px; 
+    height: 28px; min-height: 28px; max-height: 28px;
+    border-radius: 6px; 
+    font-size: 13px; 
+    background: var(--neon-violet); /* Khusus ini warnanya ungu */
+    color: #fff;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
 
+.arrow-right { color: var(--neon-cyan); margin: 0 10px; align-self: center; flex-shrink: 0; }
 .mech-title { flex: 0 0 280px; }
 .mech-desc { flex: 1; }
-
-.feature-box { background: rgba(168, 85, 247, 0.05); border: 1px dashed var(--neon-violet); padding: 25px; border-radius: 12px; text-align: center; }
+.feature-box { background: rgba(0, 240, 255, 0.05); border: 1px dashed var(--neon-cyan); padding: 25px; border-radius: 12px; text-align: center; }
 .feature-box p { font-size: 16px; color: #fff; }
-.feature-box strong { color: var(--neon-violet); }
-
-/* --- Gaya Khusus Tabel List (Pengawasan & Kewenangan) --- */
+.feature-box strong { color: var(--neon-cyan); }
 .list-label { font-weight: 700; color: var(--text-light); width: 110px; flex-shrink: 0; }
 .list-text { flex: 1; line-height: 1.6; }
 
@@ -172,34 +170,11 @@ body {
     .grid-2-services, .grid-3, .grid-half { grid-template-columns: 1fr; }
     .header-title-sub1 { font-size: 16px; }
     .hero-title { font-size: 36px; }
-    
     .dashboard-container { padding: 40px 20px; }
     .cyber-card, .cyber-card-wide { padding: 25px 20px; }
 
-    /* --- PERBAIKAN HP: Mencegah Kartu Melar --- */
-    
-    /* 1. Untuk Tabel Pengawasan (Label Kiri, Teks Kanan) */
-    .list-label {
-        width: auto !important; /* Membatalkan lebar paksa agar tidak melar */
-        flex: 1; 
-    }
-    .list-text {
-        flex: 1 1 100%; /* Memaksa teks penjelasannya turun ke baris baru */
-        margin-left: 39px; /* Teks rata kiri presisi di bawah label, tidak menabrak angka */
-        margin-top: 5px;
-    }
-
-    /* 2. Untuk List Panah (Kiri -> Kanan) */
-    .mech-title, .mech-desc {
-        flex: 1; 
-        min-width: 0; /* KUNCI PENTING: Mencegah teks mendobrak batas kartu */
-        text-align: left; 
-        font-size: 13px; 
-        line-height: 1.5;
-    }
-    .arrow-right {
-        transform: none !important; /* Panah tetap kesamping di HP */
-        margin: 0 6px;
-        flex-shrink: 0;
-    }
+    .list-label { width: auto !important; flex: 1; }
+    .list-text { flex: 1 1 100%; margin-left: 39px; margin-top: 5px; }
+    .mech-title, .mech-desc { flex: 1; min-width: 0; text-align: left; font-size: 13px; line-height: 1.5; }
+    .arrow-right { transform: none !important; margin: 0 6px; flex-shrink: 0; }
 }
