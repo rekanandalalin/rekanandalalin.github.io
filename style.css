@@ -195,6 +195,13 @@ body {
 }
 
 .arrow-right { color: var(--neon-violet); margin: 0 10px; } /* Menggunakan violet */
+/* Pengaturan Lebar Khusus untuk Menyejajarkan Panah */
+.mech-title { 
+    flex: 0 0 280px; /* Memaksa teks ini selalu selebar 280px agar panah sejajar */
+}
+.mech-desc { 
+    flex: 1; /* Teks hasil akan mengambil sisa ruang yang ada */
+}
 
 .feature-box { 
     background: rgba(168, 85, 247, 0.05); 
@@ -219,4 +226,20 @@ body {
     
     .dashboard-container { padding: 40px 20px; }
     .cyber-card, .cyber-card-wide { padding: 25px 20px; }
+   /* Tampilan HP Khusus Panah Mekanisme */
+    .mechanism-list li {
+        flex-wrap: wrap; /* Izinkan elemen turun ke bawah jika sempit */
+    }
+    .mech-title {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+    .arrow-right {
+        transform: rotate(90deg); /* Panah menunjuk ke bawah di HP */
+        margin: 5px auto;
+    }
+    .mech-desc {
+        width: 100%;
+        text-align: center;
+    }
 }
