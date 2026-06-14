@@ -115,11 +115,12 @@ body {
     font-size: 14px; font-weight: 700; color: var(--neon-cyan); margin-bottom: 25px; 
 }
 
-/* OBAT ANTI OVAL UNTUK TITIK */
+/* OBAT ANTI OVAL UNTUK TITIK & JARAK NAFAS GLOW */
 .pulse-dot { 
     width: 8px; height: 8px; background-color: var(--neon-cyan); 
     border-radius: 50%; box-shadow: 0 0 10px var(--neon-cyan); animation: pulse 2s infinite; 
-    flex-shrink: 0; /* INI KUNCINYA AGAR TETAP BULAT SEMPURNA */
+    flex-shrink: 0; /* Mencegah oval */
+    margin-right: 8px; /* Memberikan ruang bebas agar cahaya tidak menabrak teks */
 }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
 
@@ -139,12 +140,12 @@ body {
 
 /* --- BADGE UNGU S1 S2 PROFESI (SERAGAM & PRESISI) --- */
 .mechanism-list span.badge-wide {
-    flex: 0 0 75px; /* Lebar dikunci persis 75px */
+    flex: 0 0 75px; 
     max-width: 75px; 
     height: 28px; min-height: 28px; max-height: 28px;
     border-radius: 6px; 
     font-size: 13px; 
-    background: var(--neon-violet); /* Khusus ini warnanya ungu */
+    background: var(--neon-violet); 
     color: #fff;
     box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
 }
@@ -173,7 +174,7 @@ body {
     top: 15px;
     bottom: 0;
     width: 2px;
-    background: rgba(0, 240, 255, 0.3); /* Diubah jadi Cyan Transparan */
+    background: rgba(0, 240, 255, 0.3); 
     z-index: 0;
 }
 
@@ -185,7 +186,7 @@ body {
     bottom: -5px;
     width: 6px;
     height: 6px;
-    background: var(--neon-cyan); /* Diubah jadi Cyan */
+    background: var(--neon-cyan); 
     border-radius: 50%;
     box-shadow: 0 0 10px var(--neon-cyan);
     z-index: 0;
@@ -208,8 +209,8 @@ body {
     flex: 0 0 75px;
     width: 75px;
     height: 30px;
-    background: var(--neon-cyan); /* Diubah jadi Cyan */
-    color: #0b1120; /* Teks gelap agar kontras dan terbaca jelas */
+    background: var(--neon-cyan); 
+    color: #0b1120; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,7 +230,7 @@ body {
 }
 
 .timeline-content:hover {
-    border-color: rgba(0, 240, 255, 0.5); /* Hover Cyan */
+    border-color: rgba(0, 240, 255, 0.5); 
     background: rgba(0, 240, 255, 0.05);
     transform: translateX(5px); 
 }
@@ -256,14 +257,14 @@ body {
 
 .diklat-list li {
     position: relative;
-    padding-left: 45px; /* Ruang teks diperlebar agar tidak menabrak segitiga */
+    padding-left: 45px; 
     padding-right: 15px;
     margin-bottom: 20px;
-    background: rgba(255,255,255,0.02); /* Latar belakang sedikit lebih terlihat */
-    padding-top: 15px; /* Jarak atas bawah dilonggarkan */
+    background: rgba(255,255,255,0.02); 
+    padding-top: 15px; 
     padding-bottom: 15px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    border-radius: 8px; /* Ujung sudut dihaluskan */
+    border-radius: 8px; 
 }
 
 .diklat-list li:last-child {
@@ -274,8 +275,8 @@ body {
 .diklat-list li::before {
     content: '▹'; 
     position: absolute;
-    left: 18px; /* MENGGESER SEGITIGA AGAR TIDAK MEPET KIRI */
-    top: 13px; /* Menyesuaikan tinggi agar sejajar sempurna dengan teks */
+    left: 18px; 
+    top: 13px; 
     color: var(--neon-cyan);
     font-size: 20px;
 }
@@ -292,6 +293,7 @@ body {
     color: var(--text-muted);
     font-size: 13.5px;
 }
+
 /* --- 7. RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 900px) {
     .navbar { padding: 0 20px; justify-content: space-between; }
@@ -305,19 +307,37 @@ body {
     .hero-title { font-size: 36px; }
     .dashboard-container { padding: 40px 20px; }
     .cyber-card, .cyber-card-wide { padding: 25px 20px; }
+    
+    /* --- PERBAIKAN HP: Layout Cerdas Untuk Tabel & List --- */
     .mechanism-list li {
-        flex-wrap: nowrap !important; /* Memaksa label dan teks tetap berdampingan (kiri-kanan) */
+        flex-wrap: wrap !important; /* Mengizinkan elemen turun baris secara alami */
     }
+    
+    /* 1.a. Untuk Tabel TANPA Angka (Contoh: Riwayat Organisasi) */
     .list-label {
-        width: auto !important; 
-        min-width: 50px; /* Memberikan ruang yang pas untuk kata pendek seperti PII, FIM */
-        flex-shrink: 0; 
+        width: 100% !important; /* Memenuhi baris atas penuh */
+        flex: none; 
+        margin-bottom: 5px;
     }
     .list-text {
-        flex: 1; 
-        margin-left: 0 !important; /* Menghapus dorongan aneh ke dalam */
+        width: 100%; /* Memenuhi baris bawah penuh */
+        flex: none;
+        margin-left: 0 !important; /* Teks sejajar rata kiri presisi */
         margin-top: 0 !important;
     }
+
+    /* 1.b. Khusus Tabel YANG MEMILIKI Angka (Contoh: Pengawasan & Kewenangan) */
+    .mechanism-list li span + .list-label {
+        width: calc(100% - 40px) !important; /* Berbagi ruang di baris atas dengan kotak angka */
+        margin-bottom: 0;
+    }
+    .mechanism-list li span ~ .list-text {
+        width: calc(100% - 40px) !important;
+        margin-left: 39px !important; /* Teks didorong ke dalam agar pas di bawah labelnya */
+        margin-top: 5px !important;
+    }
+
+    /* 2. List Panah (Mekanisme) */
     .mech-title, .mech-desc { flex: 1; min-width: 0; text-align: left; font-size: 13px; line-height: 1.5; }
-    .arrow-right { transform: none !important; margin: 0 6px; flex-shrink: 0; }
+    .arrow-right { transform: none !important; margin: 0 6px; flex-shrink: 0; align-self: center; }
 }
