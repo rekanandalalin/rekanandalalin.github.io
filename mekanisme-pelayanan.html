@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body> <nav class="navbar">
+<body> 
+    <nav class="navbar">
         <div class="logo-area">
             <img src="logo.png" alt="Logo Rekan Andalalin" class="brand-logo">
             <h1 class="logo-text">Rekan Andalalin</h1>
@@ -60,28 +61,42 @@
                         <span class="pulse-dot"></span> MEKANISME PERIZINAN
                     </div>
                     <div class="feature-box">
-                        <p>Dapat dilaksanakan secara online melalui sistem <strong>Si Andalan</strong> yang terintegrasi dengan <strong>OSS</strong> dan <strong>Persetujuan Lingkungan (AMDAL)</strong>.</p>
+                        <p>Dapat dilaksanakan secara online melalui sistem <strong style="color: var(--neon-violet);">Si Andalan</strong> yang terintegrasi dengan <strong style="color: var(--neon-violet);">OSS</strong> dan <strong style="color: var(--neon-violet);">Persetujuan Lingkungan (AMDAL)</strong>.</p>
                     </div>
                 </div>
 
             </div>
 
-        </div>
-    </main>
+            <div class="grid-2-services">
+                
+                <div class="cyber-card-wide text-left">
+                    <div class="sub2-badge">
+                        <span class="pulse-dot"></span> MEKANISME PENYUSUNAN DOKUMEN
+                    </div>
+                    <p class="intro-text">Dilakukan oleh <strong style="color: var(--neon-violet);">KONSULTAN ANDALALIN Bersertifikat Kemenhub.</strong></p>
+                    <ul class="mechanism-list">
+                        <li><span>1</span> Kegiatan Bangkitan Lalu Lintas Rendah <i class="arrow-right">➜</i> <strong>Memenuhi Standart Teknis;</strong></li>
+                        <li><span>2</span> Kegiatan Bangkitan Lalu Lintas Sedang <i class="arrow-right">➜</i> <strong>Menyusun Rekomendasi Andalalin;</strong></li>
+                        <li><span>3</span> Kegiatan Bangkitan Lalu Lintas Tinggi <i class="arrow-right">➜</i> <strong>Menyusun Dokumen Andalalin.</strong></li>
+                    </ul>
+                </div>
 
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navMenu = document.querySelector(".nav-links");
+                <div class="cyber-card-wide text-left">
+                    <div class="sub2-badge">
+                        <span class="pulse-dot"></span> WAKTU PERIZINAN
+                    </div>
+                    <div class="feature-box" style="margin-top: 20px;">
+                        <p>Maksimal <strong style="color: var(--neon-violet); font-size: 22px; display: block; margin: 10px 0;">3 Hari Kerja</strong> setelah persyaratan dinyatakan lengkap.</p>
+                    </div>
+                </div>
 
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("show");
-        });
+            </div>
 
-        document.querySelectorAll(".nav-links a").forEach(link => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove("show");
-            });
-        });
-    </script>
-</body>
-</html>
+            <div class="grid-2-services" style="grid-template-columns: 1fr 1fr;">
+                
+                <div class="cyber-card-wide text-left">
+                    <div class="sub2-badge">
+                        <span class="pulse-dot"></span> BIAYA PENYUSUNAN
+                    </div>
+                    <p style="color: var(--text-muted); line-height: 1.8; font-size: 15px;">
+                        Sesuai skala bangkitan lalu lintas dari kegiatan
