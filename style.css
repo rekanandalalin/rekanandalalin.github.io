@@ -277,7 +277,50 @@ body {
     max-width: 900px;
     margin: 0 auto; /* Memastikan paragraf tetap di tengah */
 }
+/* --- FORMAT HALAMAN KONTEN (SEPUTAR PRODUK) --- */
+.text-left {
+    text-align: left !important;
+}
 
+.cyan-text {
+    color: var(--neon-cyan) !important;
+    font-size: 18px !important;
+    margin-bottom: 25px !important;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.custom-list {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+    list-style-type: square;
+}
+
+.custom-number-list {
+    margin-left: 20px;
+    margin-bottom: 25px;
+    color: var(--text-muted);
+}
+
+.custom-number-list li {
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+
+.note-box {
+    background-color: rgba(0, 240, 255, 0.05);
+    border-left: 4px solid var(--neon-cyan);
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+.note-box strong {
+    color: var(--neon-cyan);
+}
 /* --- RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 900px) {
     .navbar {
