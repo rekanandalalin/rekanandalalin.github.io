@@ -215,6 +215,19 @@ body {
 .feature-box strong { color: var(--neon-violet); } /* Menggunakan violet */
 /* Class khusus untuk grid yang sejajar rata (seperti Biaya & PNBP) */
 .grid-half { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+/* --- Gaya Khusus Tabel List (Pengawasan & Kewenangan) --- */
+.list-label {
+    font-weight: 700;
+    color: var(--text-light);
+    width: 110px; /* Lebar default untuk Perhubungan, PUPR, dll */
+    flex-shrink: 0; /* Mencegah kolom teks ini tertekan/mengecil */
+}
+
+.list-text {
+    flex: 1; /* Teks penjelasan akan mengisi sisa ruang kosong dengan rata */
+    line-height: 1.6;
+}
+
 /* --- 7. RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 900px) {
     .navbar { padding: 0 20px; justify-content: space-between; }
