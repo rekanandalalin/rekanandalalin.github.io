@@ -77,6 +77,21 @@ body {
 
 .cyber-card-wide { background-color: var(--bg-card); border: 1px solid var(--border-dim); border-radius: 12px; padding: 40px; transition: 0.3s; }
 .cyber-card-wide:hover { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 240, 255, 0.1); transform: translateY(-5px); }
+/* --- Pemisah dan Jarak Teks untuk Kartu Lebar --- */
+.cyber-card-wide h3 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;       /* Jarak ke bawah (ke paragraf) */
+    padding-bottom: 15px;      /* Jarak dari teks judul ke garis pemisah */
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2); /* Garis pemisah cyan tipis */
+}
+
+.cyber-card-wide p {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.8;          /* Spasi antar baris agar paragraf lebih mudah dibaca */
+}
 .text-left { text-align: left !important; }
 
 /* KODE YANG DITAMBAHKAN KEMBALI: Jarak Antar Section */
