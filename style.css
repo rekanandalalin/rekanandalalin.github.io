@@ -13,7 +13,6 @@
     --border-dim: rgba(255, 255, 255, 0.1);
 }
 
-/* Override Tema untuk halaman tertentu */
 .theme-violet {
     --neon-cyan: var(--neon-violet); 
 }
@@ -90,11 +89,31 @@ body {
 
 .extra-services { display: flex; flex-direction: column; gap: 30px; margin-top: 30px; }
 
-/* --- IKON SHAPE DI BERANDA --- */
-.icon-shape { opacity: 1; margin: 0 auto 35px auto; display: block; }
-.shape-rendah { width: 50px; height: 2px; background-color: var(--neon-cyan); transform: rotate(45deg); margin-bottom: 50px; }
-.shape-sedang { width: 45px; height: 45px; border: 2px dashed var(--neon-cyan); border-radius: 8px; }
-.shape-tinggi { width: 45px; height: 40px; background: repeating-linear-gradient(0deg, transparent, transparent 6px, var(--neon-cyan) 6px, var(--neon-cyan) 8px); }
+/* --- PERBAIKAN IKON SHAPE DI BERANDA --- */
+.icon-shape { 
+    opacity: 1; 
+    margin: 0 0 25px 0; /* Dikunci rata kiri agar sejajar dengan teks */
+    display: block; 
+}
+.shape-rendah { 
+    width: 40px; 
+    height: 3px; 
+    background-color: var(--neon-cyan); 
+    transform: rotate(45deg); 
+    transform-origin: left center; /* Diberi titik tumpu agar rotasi tidak berantakan */
+    margin-bottom: 40px; 
+}
+.shape-sedang { 
+    width: 40px; 
+    height: 40px; 
+    border: 2px dashed var(--neon-cyan); 
+    border-radius: 8px; 
+}
+.shape-tinggi { 
+    width: 40px; 
+    height: 40px; 
+    background: repeating-linear-gradient(0deg, transparent, transparent 6px, var(--neon-cyan) 6px, var(--neon-cyan) 8px); 
+}
 
 /* --- 5. HALAMAN SEPUTAR PRODUK --- */
 .cyan-text { color: var(--neon-cyan) !important; font-size: 18px !important; margin-bottom: 25px !important; border-bottom: 1px solid rgba(0, 240, 255, 0.2); padding-bottom: 15px; }
@@ -111,18 +130,13 @@ body {
 .header-title-sub1 { font-size: 22px; color: #fff; letter-spacing: 1px; font-weight: 700; }
 .sub2-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 8px 15px; border: 1px solid var(--border-dim); border-radius: 4px; font-size: 14px; font-weight: 700; color: var(--neon-cyan); margin-bottom: 25px; }
 
-/* OBAT ANTI OVAL UNTUK TITIK & JARAK NAFAS GLOW */
 .pulse-dot { width: 8px; height: 8px; background-color: var(--neon-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--neon-cyan); animation: pulse 2s infinite; flex-shrink: 0; margin-right: 8px; }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
 
 .mechanism-list { list-style: none; margin-top: 20px; }
-.mechanism-list li { background: rgba(255,255,255,0.02); margin-bottom: 15px; padding: 15px; border-radius: 8px; display: flex; align-items: flex-start; gap: 15px; font-size: 14px; border: 1px solid transparent; transition: 0.3s; flex-wrap: wrap; }
+.mechanism-list li { background: rgba(255,255,255,0.02); margin-bottom: 15px; padding: 15px; border-radius: 8px; display: flex; align-items: flex-start; gap: 15px; font-size: 14px; border: 1px solid transparent; transition: 0.3s; flex-wrap: nowrap; }
 .mechanism-list li:hover { border-color: rgba(0, 240, 255, 0.3); background: rgba(0, 240, 255, 0.05); }
-
-/* Badge Angka Default */
 .mechanism-list span { background: var(--neon-cyan); color: #000; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 800; font-size: 12px; flex: 0 0 24px; min-height: 24px; max-height: 24px; margin-top: 2px; }
-
-/* --- BADGE UNGU S1 S2 PROFESI (SERAGAM & PRESISI) --- */
 .mechanism-list span.badge-wide { flex: 0 0 75px; max-width: 75px; height: 28px; min-height: 28px; max-height: 28px; border-radius: 6px; font-size: 13px; background: var(--neon-violet); color: #fff; box-shadow: 0 0 10px rgba(168, 85, 247, 0.3); }
 
 .arrow-right { color: var(--neon-cyan); margin: 0 10px; align-self: center; flex-shrink: 0; }
@@ -132,9 +146,17 @@ body {
 .feature-box p { font-size: 16px; color: #fff; }
 .feature-box strong { color: var(--neon-cyan); }
 
-/* CSS Label Desktop */
-.list-label { font-weight: 700; color: var(--text-light); width: 110px; flex-shrink: 0; }
-.list-text { flex: 1; line-height: 1.6; }
+/* --- PERBAIKAN DESKTOP & MOBILE TABEL LIST KIRI KANAN --- */
+.list-label { 
+    flex: 0 0 110px; /* Lebar dikunci kuat */
+    width: 110px; 
+    font-weight: 700; 
+    color: var(--text-light); 
+}
+.list-text { 
+    flex: 1; 
+    line-height: 1.6; 
+}
 
 /* --- TIMELINE STYLE UNTUK RIWAYAT PENDIDIKAN --- */
 .timeline-wrapper { position: relative; margin-top: 25px; padding-bottom: 10px; }
@@ -156,6 +178,42 @@ body {
 .diklat-list strong { color: var(--neon-cyan); font-weight: 600; font-size: 14px; display: block; margin-bottom: 4px; }
 .diklat-list span { color: var(--text-muted); font-size: 13.5px; }
 
+/* --- GAYA KHUSUS HALAMAN KONTAK (FLEXBOX ALIGNMENT) --- */
+.contact-item {
+    display: flex;
+    align-items: flex-start; /* Mengunci agar ikon sejajar di atas dengan baris pertama teks */
+    gap: 20px;
+    padding: 25px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.contact-item:last-child { margin-bottom: 0; }
+.contact-icon {
+    flex: 0 0 28px;
+    color: var(--neon-cyan);
+    margin-top: 2px; /* Penyesuaian halus agar sejajar judul */
+}
+.contact-icon svg { width: 28px; height: 28px; }
+.contact-details {
+    flex: 1;
+    text-align: left;
+}
+.contact-details h4 {
+    color: var(--neon-cyan);
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.contact-details p {
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* --- GAYA UNTUK FOOTER --- */
 .site-footer { text-align: center; padding: 30px 20px; margin-top: 60px; border-top: 1px solid var(--border-dim); color: var(--text-muted); font-size: 14px; letter-spacing: 0.5px; }
 .site-footer a { color: var(--neon-cyan); text-decoration: none; font-weight: 700; transition: 0.3s; }
@@ -175,34 +233,28 @@ body {
     .dashboard-container { padding: 40px 20px; }
     .cyber-card, .cyber-card-wide { padding: 25px 20px; }
 
-    /* --- PERBAIKAN HP: Kapsul Kaca Logo --- */
     .glass-pill { gap: 15px; padding: 12px 25px; border-radius: 40px; }
     .glass-logo { height: 45px; }
     .cert-text { font-size: 10px; letter-spacing: 1px; }
     
-    /* --- PERBAIKAN HP SUPER CERDAS: Kunci Tabel Tetap Sejajar Kiri & Kanan --- */
+    /* --- PERBAIKAN FINAL MOBILE: Kunci Tabel Tetap Sejajar Kiri-Kanan --- */
     .mechanism-list li {
-        flex-wrap: nowrap !important; /* KUNCI: Mencegah teks anjlok ke baris baru */
-        align-items: flex-start;
+        flex-wrap: nowrap !important; /* HARGA MATI: Elemen tidak boleh anjlok/turun */
+        align-items: flex-start !important;
+        gap: 15px !important;
     }
     
-    /* Lebar Label (PII, PUPR, Jalan Nasional) dibuat dinamis pakai persentase agar tidak menabrak batas */
     .list-label {
-        width: 35% !important; 
-        min-width: 70px;
-        max-width: 120px;
-        flex-shrink: 0; 
-        margin-bottom: 0 !important;
-        white-space: normal;
-        word-wrap: break-word; /* Teks panjang di label (spt: "Jalan Kabupaten") akan lipat rapi */
+        flex: 0 0 100px !important; /* Lebar label dikunci pada 100px agar muat "Jalan Nasional" dll */
+        width: 100px !important;
+        margin: 0 !important;
+        white-space: normal; /* Mengizinkan teks panjang di dalam label lipat sendiri */
     }
 
-    /* Penjelasan Teks (Anggota Persatuan..., dsb) */
     .list-text {
-        flex: 1; 
+        flex: 1 1 auto !important; 
         width: auto !important; 
-        margin-left: 0 !important; /* Dihapus: Dorongan aneh 39px */
-        margin-top: 0 !important;
+        margin: 0 !important; /* Bebas dari margin aneh yang membuatnya bolong */
     }
 
     /* Khusus untuk List yang punya tanda Panah (Mekanisme) */
@@ -215,7 +267,7 @@ body {
     }
     .arrow-right { 
         transform: none !important; 
-        margin: 0 6px; 
+        margin: 0 6px !important; 
         flex-shrink: 0; 
         align-self: center; 
     }
