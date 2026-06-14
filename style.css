@@ -305,9 +305,19 @@ body {
     .hero-title { font-size: 36px; }
     .dashboard-container { padding: 40px 20px; }
     .cyber-card, .cyber-card-wide { padding: 25px 20px; }
-
-    .list-label { width: auto !important; flex: 1; }
-    .list-text { flex: 1 1 100%; margin-left: 39px; margin-top: 5px; }
+    .mechanism-list li {
+        flex-wrap: nowrap !important; /* Memaksa label dan teks tetap berdampingan (kiri-kanan) */
+    }
+    .list-label {
+        width: auto !important; 
+        min-width: 50px; /* Memberikan ruang yang pas untuk kata pendek seperti PII, FIM */
+        flex-shrink: 0; 
+    }
+    .list-text {
+        flex: 1; 
+        margin-left: 0 !important; /* Menghapus dorongan aneh ke dalam */
+        margin-top: 0 !important;
+    }
     .mech-title, .mech-desc { flex: 1; min-width: 0; text-align: left; font-size: 13px; line-height: 1.5; }
     .arrow-right { transform: none !important; margin: 0 6px; flex-shrink: 0; }
 }
