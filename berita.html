@@ -42,13 +42,13 @@
 
         .carousel-item.active {
             opacity: 1;
-            position: relative;
+            position: relative; /* Membuat elemen ini mengambil ruang agar kontainer tidak ciut */
         }
 
         .carousel-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Memastikan gambar rapi dan proporsional */
+            object-fit: cover;
         }
 
         /* Navigasi Titik Bawah Carousel */
@@ -75,14 +75,14 @@
         .indicator.active {
             background: var(--neon-cyan);
             box-shadow: 0 0 10px var(--neon-cyan);
-            width: 28px; /* Efek memanjang untuk indikator aktif */
+            width: 28px;
             border-radius: 6px;
         }
 
         /* Responsif Carousel untuk Layar HP */
         @media (max-width: 768px) {
             .carousel-wrapper {
-                height: 250px; /* Tinggi disesuaikan agar tidak terlalu tinggi di HP */
+                height: 250px; 
             }
             .carousel-indicators {
                 bottom: 12px;
@@ -146,31 +146,31 @@
         </div>
 
         <div class="extra-services">
-            <div class="cyber-card-wide text-left" style="border-left: 4px solid var(--neon-cyan);">
+            <div class="cyber-card-wide text-left">
                 <div class="sub2-badge">
                     <span class="pulse-dot"></span> UNDANG-UNDANG NOMOR 22 TAHUN 2009
                 </div>
                 
-                <div class="note-box" style="margin-bottom: 20px; background: rgba(0, 240, 255, 0.02);">
-                    <p style="color: #fff; font-size: 15.5px; line-height: 1.8;">
-                        <strong style="color: var(--neon-cyan); font-weight: 700;">Pasal 99 Ayat 1 :</strong> <br>
-                        "Every planned construction of activity centers, settlements, and infrastructure that will cause disturbances to Security, Safety, Order, and Smooth Traffic and Road Transportation is required to conduct a traffic impact analysis."
+                <div style="background: rgba(0, 240, 255, 0.03); border-top: 3px solid var(--neon-cyan); border-radius: 8px; padding: 25px 20px; margin-bottom: 20px; margin-top: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    <strong style="color: var(--neon-cyan); font-size: 16px; font-weight: 700; display: block; margin-bottom: 10px;">Pasal 99 Ayat 1 :</strong>
+                    <p style="color: #fff; font-size: 15px; line-height: 1.8; margin: 0; text-align: justify;">
+                        "Setiap rencana pembangunan pusat kegiatan, permukiman, dan infrastruktur yang akan menimbulkan gangguan Keamanan, Keselamatan, Ketertiban, dan Kelancaran Lalu Lintas dan Angkutan Jalan wajib dilakukan analisis dampak Lalu Lintas."
                     </p>
                 </div>
 
-                <div class="note-box" style="margin-bottom: 25px; background: rgba(0, 240, 255, 0.02);">
-                    <p style="color: #fff; font-size: 15.5px; line-height: 1.8;">
-                        <strong style="color: var(--neon-cyan); font-weight: 700;">Pasal 99 Ayat 3 :</strong> <br>
-                        "The results of the traffic impact analysis as referred to in paragraph (1) constitute one of the requirements for developers to obtain permits from the Government and/or Local Government according to laws and regulations."
+                <div style="background: rgba(0, 240, 255, 0.03); border-top: 3px solid var(--neon-cyan); border-radius: 8px; padding: 25px 20px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    <strong style="color: var(--neon-cyan); font-size: 16px; font-weight: 700; display: block; margin-bottom: 10px;">Pasal 99 Ayat 3 :</strong>
+                    <p style="color: #fff; font-size: 15px; line-height: 1.8; margin: 0; text-align: justify;">
+                        "Hasil analisis dampak Lalu Lintas sebagaimana dimaksud pada ayat (1) merupakan salah satu syarat bagi pengembang untuk mendapatkan izin Pemerintah dan/atau Pemerintah Daerah menurut peraturan perundang-undangan."
                     </p>
                 </div>
 
                 <p style="color: var(--text-light); line-height: 1.8; font-size: 15px; text-align: justify; margin-top: 15px;">
-                    Traffic impact analysis stated in Law Number 22 of 2009 concerning Traffic and Road Transportation in <strong style="color: var(--neon-cyan);">Article 100 Paragraph 1</strong> also mentions that as referred to in Article 99 paragraph (1) is conducted by a consultant institution that has certified experts. 
+                    Analisis dampak Lalu Lintas yang tertuang pada UU Nomor 22 Tahun 2009 tentang Lalu Lintas dan Angkutan Jalan di <strong style="color: var(--neon-cyan);">Pasal 100 Ayat 1</strong> juga menyebutkan sebagaimana dimaksud dalam Pasal 99 ayat (1) dilakukan oleh lembaga konsultan yang memiliki tenaga ahli bersertifikat. 
                 </p>
                 
                 <p style="color: var(--text-light); line-height: 1.8; font-size: 15px; text-align: justify; margin-top: 15px;">
-                    And <strong style="color: #fff; font-weight: 600;">Hervian Handika Sugasta, S.T., M.T.</strong> as the service provider has completed education and training in Compiling Traffic Impact Analysis for 9 days (70 JP) organized by <strong style="color: var(--neon-cyan);">POLITEKNIK TRANSPORTASI DARAT BALI</strong> located in Gianyar and was also declared to have Passed the Competency Test/Certified Traffic Impact Analysis Compiler Expert based on the Decree of the Director General of Land Transportation.
+                    Dan <strong style="color: #fff; font-weight: 600;">Hervian Handika Sugasta, S.T., M.T.</strong> selaku penyedia jasa telah tamat pendidikan dan pelatihan Penyusunan Analisis Dampak Lalu Lintas selama 9 hari (70 JP) yang diselenggarakan oleh <strong style="color: var(--neon-cyan);">POLITEKNIK TRANSPORTASI DARAT BALI</strong> berlokasi di Gianyar juga dinyatakan Lulus Uji Kompetensi/ter-Sertifikasi Tenaga Ahli Penyusun Analisis Dampak Lalu Lintas berdasarkan Surat Keputusan Direktur Jenderal Perhubungan Darat.
                 </p>
             </div>
         </div>
@@ -189,21 +189,26 @@
             navMenu.classList.toggle("show");
         });
 
-        // 2. Logic Mekanisme Carousel Otomatis (Setiap 10 Detik)
+        // 2. Logic Mekanisme Carousel Otomatis (Perbaikan Bug Typo)
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.carousel-item');
         const indicators = document.querySelectorAll('.indicator');
-        const slideIntervalTime = 10000; // Dikunci tepat 10 detik (10000ms)
+        const slideIntervalTime = 10000; // 10 detik
         let slideTimer;
 
         function showSlide(index) {
-            // Reset index jika melebihi jumlah slide
+            // Mencegah error jika tidak ada slide sama sekali
+            if (slides.length === 0) return;
+
+            // Reset index jika melewati batas
             if (index >= slides.length) currentSlideIndex = 0;
             if (index < 0) currentSlideIndex = slides.length - 1;
 
-            // Hilangkan status aktif dari semua slide & titik indikator
+            // Hapus status aktif dari SEMUA slide dan indikator
             slides.forEach(slide => slide.classList.remove('active'));
-            indicators.forEach(ind => .classList.remove('active'));
+            
+            // PERBAIKAN: Sebelumnya ada typo di baris ini
+            indicators.forEach(ind => ind.classList.remove('active'));
 
             // Aktifkan slide dan indikator terpilih
             slides[currentSlideIndex].classList.add('active');
@@ -219,7 +224,7 @@
         function jumpToSlide(index) {
             currentSlideIndex = index;
             showSlide(currentSlideIndex);
-            resetTimer(); // Reset timer agar hitungan 10 detik diulang dari nol saat diklik manual
+            resetTimer(); // Reset waktu kembali ke 0 saat ditekan
         }
 
         function startTimer() {
@@ -231,10 +236,12 @@
             startTimer();
         }
 
-        // Jalankan timer carousel saat halaman selesai dimuat
-        startTimer();
+        // Mulai timer carousel saat website dimuat
+        if (slides.length > 0) {
+            startTimer();
+        }
 
-        // 3. Script Smart Email Link Footer (Deteksi Otomatis Penerima Laptop vs HP)
+        // 3. Script Smart Email Link Footer
         const emailLink = document.getElementById("smart-email");
         const emailAddress = "nopiadintya24@gmail.com";
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
