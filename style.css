@@ -151,7 +151,7 @@ body {
     transform: translateX(4px);
 }
 
-/* KOTAK ANGKA: Kunci Mutlak Anti-Penyok (PC & HP) */
+/* KOTAK ANGKA: Kunci Mutlak Anti-Penyok */
 .mechanism-list span { 
     background: rgba(0, 240, 255, 0.1); 
     color: var(--neon-cyan); 
@@ -163,19 +163,19 @@ body {
     font-weight: 800; 
     font-size: 13px; 
     
-    /* PENGUNCIAN ABSOLUT */
     flex: 0 0 28px !important; 
     width: 28px !important;
     min-width: 28px !important;
     max-width: 28px !important;
     height: 28px !important; 
     margin: 0; 
-    flex-shrink: 0 !important; /* Mencegah flexbox meremukkannya */
+    flex-shrink: 0 !important; 
 }
 
-/* Kolom Kiri (Judul/Kriteria) */
+/* KUNCI LEBAR SAMA RATA: Kolom Kiri (Judul/Kriteria) */
 .mech-title, .list-label { 
-    flex: 1; 
+    flex: 0 0 240px; /* Lebar dikunci mati 240px agar kolom kanan sejajar sempurna */
+    width: 240px; 
     font-weight: 700; 
     color: #fff; 
     text-align: left;
@@ -184,9 +184,9 @@ body {
 /* Tanda Panah Pemisah */
 .arrow-right { color: var(--neon-cyan); margin: 0 10px; align-self: center; flex-shrink: 0; opacity: 0.5; }
 
-/* KOTAK KANAN: Penjelasan dengan Tinggi Seragam (PC) */
+/* KUNCI TINGGI FLEKSIBEL: Kolom Kanan (Hasil/Penjelasan) */
 .mech-desc, .list-text { 
-    flex: 1.5; 
+    flex: 1; /* Mengambil sisa ruang secara merata */
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255,255,255,0.03);
     padding: 12px 18px;
@@ -194,11 +194,9 @@ body {
     color: var(--text-light);
     line-height: 1.6; 
     text-align: left;
-    
-    /* PENGUNCIAN TINGGI SERAGAM & VERTIKAL TENGAH */
-    min-height: 100px; /* Memaksa kotak sekecil apapun mengikuti tinggi yang sama */
     display: flex;
-    align-items: center;
+    align-items: center; /* Memastikan teks pendek tetap berada di tengah vertikal */
+    /* min-height dihapus agar tidak boros ruang vertikal */
 }
 .mech-desc strong, .list-text strong { color: var(--neon-cyan); font-weight: 600; }
 
@@ -270,18 +268,17 @@ body {
 
     /* --- REKAYASA STRUKTUR MOBILE SUPER PREMIUM --- */
     .mechanism-list li { 
-        flex-direction: row !important; /* Baris Pertama: Angka & Judul */
-        flex-wrap: wrap !important; /* Izinkan Penjelasan turun ke bawah */
+        flex-direction: row !important; 
+        flex-wrap: wrap !important; 
         align-items: center !important; 
         gap: 0 !important; 
         padding: 18px !important;
     }
     
-    /* Penguncian Ekstra untuk Kotak Angka di Mobile */
     .mechanism-list span {
         flex: 0 0 28px !important;
         width: 28px !important;
-        min-width: 28px !important; /* HARGA MATI anti penyok */
+        min-width: 28px !important; 
         height: 28px !important;
         margin-right: 12px !important;
         margin-bottom: 12px !important;
@@ -307,13 +304,9 @@ body {
         border-radius: 4px !important;
         padding: 12px 16px !important;
         font-size: 13.5px !important;
-        
-        /* Lepaskan batas tinggi agar fleksibel di HP dan menghemat ruang layar */
-        min-height: auto !important; 
         display: block !important;
     }
 
-    /* Responsif Carousel */
     .carousel-wrapper { height: 250px; }
     .carousel-indicators { bottom: 12px; }
     .indicator { width: 8px; height: 8px; }
