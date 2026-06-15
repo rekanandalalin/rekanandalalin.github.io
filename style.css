@@ -125,7 +125,14 @@ body {
 .pulse-dot { width: 8px; height: 8px; background-color: var(--neon-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--neon-cyan); animation: pulse 2s infinite; flex-shrink: 0; margin-right: 8px; }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
 
-.mechanism-list { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 16px; }
+.mechanism-list { 
+    list-style: none; 
+    margin-top: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 16px; 
+    width: 100%; /* Memastikan lebar maksimum aman */
+}
 
 /* Transformasi Baris List Menjadi Pipeline Premium */
 .mechanism-list li { 
@@ -142,6 +149,7 @@ body {
     border-left: 3px solid var(--neon-cyan); 
     transition: all 0.3s ease; 
     flex-wrap: nowrap; 
+    width: 100%;
 }
 .mechanism-list li:hover { 
     border-color: rgba(0, 240, 255, 0.2); 
@@ -162,7 +170,6 @@ body {
     border-radius: 6px; 
     font-weight: 800; 
     font-size: 13px; 
-    
     flex: 0 0 28px !important; 
     width: 28px !important;
     min-width: 28px !important;
@@ -172,10 +179,10 @@ body {
     flex-shrink: 0 !important; 
 }
 
-/* KUNCI LEBAR SAMA RATA: Kolom Kiri (Judul/Kriteria) */
+/* KUNCI LEBAR AMAN: Kolom Kiri (Judul/Kriteria) */
 .mech-title, .list-label { 
-    flex: 0 0 240px; /* Lebar dikunci mati 240px agar kolom kanan sejajar sempurna */
-    width: 240px; 
+    flex: 0 0 200px; /* Lebar dikunci aman 200px agar tidak menjepit kolom kanan */
+    width: 200px; 
     font-weight: 700; 
     color: #fff; 
     text-align: left;
@@ -184,9 +191,10 @@ body {
 /* Tanda Panah Pemisah */
 .arrow-right { color: var(--neon-cyan); margin: 0 10px; align-self: center; flex-shrink: 0; opacity: 0.5; }
 
-/* KUNCI TINGGI FLEKSIBEL: Kolom Kanan (Hasil/Penjelasan) */
+/* KOTAK KANAN: Kunci Anti-Melebar (Penjelasan) */
 .mech-desc, .list-text { 
-    flex: 1; /* Mengambil sisa ruang secara merata */
+    flex: 1; 
+    min-width: 0; /* HARGA MATI: Mencegah kartu melebar ke kanan (out of bounds) */
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255,255,255,0.03);
     padding: 12px 18px;
@@ -194,9 +202,7 @@ body {
     color: var(--text-light);
     line-height: 1.6; 
     text-align: left;
-    display: flex;
-    align-items: center; /* Memastikan teks pendek tetap berada di tengah vertikal */
-    /* min-height dihapus agar tidak boros ruang vertikal */
+    display: block; /* Mengembalikan teks ke sifat natural agar melipat otomatis */
 }
 .mech-desc strong, .list-text strong { color: var(--neon-cyan); font-weight: 600; }
 
@@ -275,6 +281,7 @@ body {
         padding: 18px !important;
     }
     
+    /* Penguncian Ekstra untuk Kotak Angka di Mobile */
     .mechanism-list span {
         flex: 0 0 28px !important;
         width: 28px !important;
@@ -304,9 +311,14 @@ body {
         border-radius: 4px !important;
         padding: 12px 16px !important;
         font-size: 13.5px !important;
+        
+        /* Mengamankan pembatasan di mobile */
+        min-width: 0 !important;
+        min-height: auto !important; 
         display: block !important;
     }
 
+    /* Responsif Carousel */
     .carousel-wrapper { height: 250px; }
     .carousel-indicators { bottom: 12px; }
     .indicator { width: 8px; height: 8px; }
