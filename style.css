@@ -76,7 +76,7 @@ body {
 .grid-2-services { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; }
 .grid-half { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 
-/* KUNCI: Perataan Tengah untuk Kartu Beranda */
+/* KUNCI PERATAAN: Pastikan kartu sejajar atas */
 .cyber-card { 
     background-color: var(--bg-card); 
     border: 1px solid var(--border-dim); 
@@ -85,12 +85,13 @@ body {
     transition: all 0.3s ease; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Memastikan icon di tengah */
-    text-align: center;  /* Memastikan teks di tengah */
+    justify-content: flex-start; /* Memastikan konten mulai dari atas lurus */
+    align-items: center; 
+    text-align: center;
 }
 .cyber-card:hover { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 240, 255, 0.1); transform: translateY(-5px); }
 .cyber-card h3 { color: #fff; font-size: 20px; margin-bottom: 15px; font-weight: 600; }
-.cyber-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+.cyber-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; margin: 0; }
 
 .cyber-card-wide { background-color: var(--bg-card); border: 1px solid var(--border-dim); border-radius: 12px; padding: 40px; transition: 0.3s; }
 .cyber-card-wide:hover { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 240, 255, 0.1); transform: translateY(-5px); }
@@ -100,10 +101,17 @@ body {
 
 .extra-services { display: flex; flex-direction: column; gap: 30px; margin-top: 30px; }
 
-/* --- PERBAIKAN IKON SHAPE DI BERANDA --- */
+/* --- PERBAIKAN IKON SHAPE DI BERANDA (KANDANG/WRAPPER) --- */
+.icon-wrapper {
+    height: 60px; /* Tinggi kandang dikunci absolut */
+    display: flex;
+    align-items: center; /* Ikon selalu di tengah vertikal */
+    justify-content: center; /* Ikon selalu di tengah horizontal */
+    margin-bottom: 20px; /* Jarak ke judul sama rata */
+}
+
 .icon-shape { 
     opacity: 1; 
-    margin: 0 auto 25px auto; /* Kunci rata tengah absolut */
     display: block; 
 }
 .shape-rendah { 
@@ -111,8 +119,6 @@ body {
     height: 3px; 
     background-color: var(--neon-cyan); 
     transform: rotate(45deg); 
-    transform-origin: center; /* Tumpuan di tengah agar rotasi seimbang */
-    margin-bottom: 35px; /* Kompensasi tinggi karena dia miring */
 }
 .shape-sedang { 
     width: 40px; 
