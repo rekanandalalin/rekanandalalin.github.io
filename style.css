@@ -135,7 +135,7 @@ body {
     border-radius: 8px; 
     display: flex; 
     align-items: center; 
-    justify-content: flex-start; /* Dirubah agar tidak terpecah ekstrem */
+    justify-content: flex-start;
     gap: 15px; 
     font-size: 14.5px; 
     border: 1px solid rgba(255,255,255,0.03); 
@@ -151,7 +151,7 @@ body {
     transform: translateX(4px);
 }
 
-/* Kotak Angka Langkah yang Terkunci (Anti-Penyok) */
+/* KOTAK ANGKA: Kunci Mutlak Anti-Penyok (PC & HP) */
 .mechanism-list span { 
     background: rgba(0, 240, 255, 0.1); 
     color: var(--neon-cyan); 
@@ -162,15 +162,20 @@ body {
     border-radius: 6px; 
     font-weight: 800; 
     font-size: 13px; 
-    flex: 0 0 28px !important; /* Dikuatkan dengan !important */
+    
+    /* PENGUNCIAN ABSOLUT */
+    flex: 0 0 28px !important; 
     width: 28px !important;
+    min-width: 28px !important;
+    max-width: 28px !important;
     height: 28px !important; 
     margin: 0; 
+    flex-shrink: 0 !important; /* Mencegah flexbox meremukkannya */
 }
 
 /* Kolom Kiri (Judul/Kriteria) */
 .mech-title, .list-label { 
-    flex: 1; /* Dinamis */
+    flex: 1; 
     font-weight: 700; 
     color: #fff; 
     text-align: left;
@@ -179,9 +184,9 @@ body {
 /* Tanda Panah Pemisah */
 .arrow-right { color: var(--neon-cyan); margin: 0 10px; align-self: center; flex-shrink: 0; opacity: 0.5; }
 
-/* Kolom Kanan (Hasil/Penjelasan dalam Bentuk Kapsul Kaca) */
+/* KOTAK KANAN: Penjelasan dengan Tinggi Seragam (PC) */
 .mech-desc, .list-text { 
-    flex: 1.5; /* Lebih lebar sedikit dari judul */
+    flex: 1.5; 
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255,255,255,0.03);
     padding: 12px 18px;
@@ -189,6 +194,11 @@ body {
     color: var(--text-light);
     line-height: 1.6; 
     text-align: left;
+    
+    /* PENGUNCIAN TINGGI SERAGAM & VERTIKAL TENGAH */
+    min-height: 100px; /* Memaksa kotak sekecil apapun mengikuti tinggi yang sama */
+    display: flex;
+    align-items: center;
 }
 .mech-desc strong, .list-text strong { color: var(--neon-cyan); font-weight: 600; }
 
@@ -267,16 +277,17 @@ body {
         padding: 18px !important;
     }
     
-    /* Kotak Angka Tetap Kokoh di Mobile */
+    /* Penguncian Ekstra untuk Kotak Angka di Mobile */
     .mechanism-list span {
         flex: 0 0 28px !important;
         width: 28px !important;
+        min-width: 28px !important; /* HARGA MATI anti penyok */
         height: 28px !important;
         margin-right: 12px !important;
-        margin-bottom: 12px !important; /* Memberi jarak ke penjelasan di bawahnya */
+        margin-bottom: 12px !important;
+        flex-shrink: 0 !important;
     }
 
-    /* Judul/Label Mengambil Sisa Baris Atas */
     .mech-title, .list-label { 
         flex: 1 !important; 
         width: calc(100% - 40px) !important;
@@ -284,20 +295,22 @@ body {
         font-size: 14.5px !important;
     }
 
-    /* Sembunyikan panah di HP agar tidak mengotori layar */
     .arrow-right { display: none !important; }
 
-    /* Penjelasan Jatuh Ke Baris Bawah & Full Width */
     .mech-desc, .list-text { 
         flex: 0 0 100% !important; 
         width: 100% !important; 
         margin-left: 0 !important; 
         background: rgba(255,255,255,0.02) !important;
         border: none !important;
-        border-left: 2px solid var(--neon-cyan) !important; /* Garis vertikal penanda */
+        border-left: 2px solid var(--neon-cyan) !important;
         border-radius: 4px !important;
         padding: 12px 16px !important;
         font-size: 13.5px !important;
+        
+        /* Lepaskan batas tinggi agar fleksibel di HP dan menghemat ruang layar */
+        min-height: auto !important; 
+        display: block !important;
     }
 
     /* Responsif Carousel */
