@@ -100,14 +100,8 @@ body {
 
 .extra-services { display: flex; flex-direction: column; gap: 30px; margin-top: 30px; }
 
-/* --- PERBAIKAN IKON SHAPE DI BERANDA (KANDANG/WRAPPER) --- */
-.icon-wrapper {
-    height: 60px; 
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    margin-bottom: 20px; 
-}
+/* --- IKON SHAPE DI BERANDA --- */
+.icon-wrapper { height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
 .icon-shape { opacity: 1; display: block; }
 .shape-rendah { width: 40px; height: 3px; background-color: var(--neon-cyan); transform: rotate(45deg); }
 .shape-sedang { width: 40px; height: 40px; border: 2px dashed var(--neon-cyan); border-radius: 8px; }
@@ -123,7 +117,7 @@ body {
 .output-highlight { font-weight: 700; color: var(--text-light); font-size: 18px !important; list-style-type: none !important; background: rgba(148, 163, 184, 0.1); border-left: 3px solid var(--neon-cyan); padding: 12px 20px; border-radius: 0 4px 4px 0; margin-bottom: 15px; margin-left: -20px; display: block; width: fit-content; transition: 0.3s; }
 .output-highlight:hover { background: rgba(148, 163, 184, 0.2); box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.1); }
 
-/* --- 6. GAYA KOMPONEN KONTEN KHUSUS --- */
+/* --- 6. GAYA REKOMENDASI PIPELINE TERBARU (DESKTOP) --- */
 .main-header-panel { background: linear-gradient(90deg, rgba(0, 240, 255, 0.05) 0%, rgba(13, 17, 32, 0.9) 100%); border-left: 4px solid var(--neon-cyan); padding: 30px; margin-bottom: 40px; position: relative; overflow: hidden; }
 .header-title-sub1 { font-size: 22px; color: #fff; letter-spacing: 1px; font-weight: 700; }
 .sub2-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 8px 15px; border: 1px solid var(--border-dim); border-radius: 4px; font-size: 14px; font-weight: 700; color: var(--neon-cyan); margin-bottom: 25px; }
@@ -131,21 +125,75 @@ body {
 .pulse-dot { width: 8px; height: 8px; background-color: var(--neon-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--neon-cyan); animation: pulse 2s infinite; flex-shrink: 0; margin-right: 8px; }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
 
-.mechanism-list { list-style: none; margin-top: 20px; }
-.mechanism-list li { background: rgba(255,255,255,0.02); margin-bottom: 15px; padding: 15px; border-radius: 8px; display: flex; align-items: flex-start; gap: 15px; font-size: 14px; border: 1px solid transparent; transition: 0.3s; flex-wrap: nowrap; }
-.mechanism-list li:hover { border-color: rgba(0, 240, 255, 0.3); background: rgba(0, 240, 255, 0.05); }
-.mechanism-list span { background: var(--neon-cyan); color: #000; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 800; font-size: 12px; flex: 0 0 24px; min-height: 24px; max-height: 24px; margin-top: 2px; }
-.mechanism-list span.badge-wide { flex: 0 0 75px; max-width: 75px; height: 28px; min-height: 28px; max-height: 28px; border-radius: 6px; font-size: 13px; background: var(--neon-violet); color: #fff; box-shadow: 0 0 10px rgba(168, 85, 247, 0.3); }
+.mechanism-list { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 16px; }
 
-.arrow-right { color: var(--neon-cyan); margin: 0 10px; align-self: center; flex-shrink: 0; }
-.mech-title { flex: 0 0 280px; }
-.mech-desc { flex: 1; }
+/* Transformasi Baris List Menjadi Pipeline Premium */
+.mechanism-list li { 
+    background: rgba(255,255,255,0.01); 
+    margin-bottom: 0; 
+    padding: 16px 24px; 
+    border-radius: 8px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    gap: 20px; 
+    font-size: 14.5px; 
+    border: 1px solid rgba(255,255,255,0.03); 
+    border-left: 3px solid var(--neon-cyan); /* Aksen neon kiri */
+    transition: all 0.3s ease; 
+    flex-wrap: nowrap; 
+}
+.mechanism-list li:hover { 
+    border-color: rgba(0, 240, 255, 0.2); 
+    border-left-color: var(--neon-cyan);
+    background: rgba(0, 240, 255, 0.02); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: translateX(4px);
+}
+
+/* Kotak Angka Langkah */
+.mechanism-list span { 
+    background: rgba(0, 240, 255, 0.1); 
+    color: var(--neon-cyan); 
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 6px; 
+    font-weight: 800; 
+    font-size: 13px; 
+    flex: 0 0 28px; 
+    min-height: 28px; 
+    max-height: 28px; 
+    margin-top: 0; 
+}
+
+/* Kolon Kiri (Judul/Kriteria) */
+.mech-title, .list-label { 
+    flex: 0 0 250px; 
+    width: 250px;
+    font-weight: 700; 
+    color: #fff; 
+}
+
+/* Tanda Panah Pemisah */
+.arrow-right { color: var(--neon-cyan); margin: 0 10px; align-self: center; flex-shrink: 0; opacity: 0.5; }
+
+/* Kolon Kanan (Hasil/Penjelasan dalam Bentuk Kapsul Kaca) */
+.mech-desc, .list-text { 
+    flex: 1; 
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255,255,255,0.03);
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: var(--text-light);
+    line-height: 1.6; 
+}
+.mech-desc strong, .list-text strong { color: var(--neon-cyan); font-weight: 600; }
+
 .feature-box { background: rgba(0, 240, 255, 0.05); border: 1px dashed var(--neon-cyan); padding: 25px; border-radius: 12px; text-align: center; }
 .feature-box p { font-size: 16px; color: #fff; }
 .feature-box strong { color: var(--neon-cyan); }
-
-.list-label { flex: 0 0 110px; width: 110px; font-weight: 700; color: var(--text-light); }
-.list-text { flex: 1; line-height: 1.6; }
 
 /* --- TIMELINE STYLE UNTUK RIWAYAT PENDIDIKAN --- */
 .timeline-wrapper { position: relative; margin-top: 25px; padding-bottom: 10px; }
@@ -167,7 +215,7 @@ body {
 .diklat-list strong { color: var(--neon-cyan); font-weight: 600; font-size: 14px; display: block; margin-bottom: 4px; }
 .diklat-list span { color: var(--text-muted); font-size: 13.5px; }
 
-/* --- GAYA KHUSUS HALAMAN KONTAK (FLEXBOX ALIGNMENT) --- */
+/* --- GAYA KHUSUS HALAMAN KONTAK --- */
 .contact-item { display: flex; align-items: flex-start; gap: 20px; padding: 25px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; margin-bottom: 20px; }
 .contact-item:last-child { margin-bottom: 0; }
 .contact-icon { flex: 0 0 28px; color: var(--neon-cyan); margin-top: 2px; }
@@ -177,66 +225,14 @@ body {
 .contact-details p { color: var(--text-light); font-size: 15px; line-height: 1.6; margin: 0; }
 
 /* --- 8. CAROUSEL BERITA --- */
-.carousel-container {
-    position: relative;
-    width: 100%; /* Dibuat 100% agar selebar kartu di bawahnya */
-    margin: 0 auto 40px auto;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--border-dim);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 240, 255, 0.05);
-    background-color: var(--bg-card);
-}
-.carousel-wrapper {
-    position: relative;
-    height: 450px;
-    width: 100%;
-}
-.carousel-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.carousel-item.active {
-    opacity: 1;
-    position: relative; 
-}
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.carousel-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    z-index: 10;
-}
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: 0.3s;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-}
-.indicator.active {
-    background: var(--neon-cyan);
-    box-shadow: 0 0 10px var(--neon-cyan);
-    width: 28px;
-    border-radius: 6px;
-}
+.carousel-container { position: relative; width: 100%; margin: 0 auto 40px auto; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-dim); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 240, 255, 0.05); background-color: var(--bg-card); }
+.carousel-wrapper { position: relative; height: 450px; width: 100%; }
+.carousel-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; justify-content: center; align-items: center; }
+.carousel-item.active { opacity: 1; position: relative; }
+.carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+.carousel-indicators { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; z-index: 10; }
+.indicator { width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.3); cursor: pointer; transition: 0.3s; border: 1px solid rgba(0, 0, 0, 0.2); }
+.indicator.active { background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); width: 28px; border-radius: 6px; }
 
 /* --- GAYA UNTUK FOOTER --- */
 .site-footer { text-align: center; padding: 30px 20px; margin-top: 60px; border-top: 1px solid var(--border-dim); color: var(--text-muted); font-size: 14px; letter-spacing: 0.5px; }
@@ -260,16 +256,36 @@ body {
     .glass-pill { gap: 15px; padding: 12px 25px; border-radius: 40px; }
     .glass-logo { height: 45px; }
     .cert-text { font-size: 10px; letter-spacing: 1px; }
-    
-    .mechanism-list li { flex-wrap: nowrap !important; align-items: flex-start !important; gap: 15px !important; }
-    
-    .list-label { flex: 0 0 100px !important; width: 100px !important; margin: 0 !important; white-space: normal; }
-    .list-text { flex: 1 1 auto !important; width: auto !important; margin: 0 !important; }
 
-    .mech-title, .mech-desc { flex: 1; min-width: 0; text-align: left; font-size: 13px; line-height: 1.5; }
-    .arrow-right { transform: none !important; margin: 0 6px !important; flex-shrink: 0; align-self: center; }
+    /* --- REKAYASA STRUKTUR MOBILE SUPER PREMIUM --- */
+    .mechanism-list li { 
+        flex-direction: column !important; /* Susun vertikal (Atas ke Bawah) */
+        align-items: flex-start !important; 
+        gap: 12px !important; 
+        padding: 18px !important;
+    }
+    
+    /* Sembunyikan panah di HP agar tidak mengotori layar */
+    .arrow-right { display: none !important; }
+    
+    /* Judul/Label Memenuhi Baris Atas */
+    .mech-title, .list-label { 
+        width: 100% !important; 
+        flex: none !important;
+        font-size: 14.5px !important;
+    }
 
-    /* Responsif Carousel */
+    /* Penjelasan Jatuh Ke Baris Bawah & Menjorok Kedalam Secara Vertikal */
+    .mech-desc, .list-text { 
+        width: 100% !important; 
+        margin-left: 0 !important; 
+        background: rgba(255,255,255,0.02) !important;
+        border-left: 2px solid var(--neon-cyan) !important; /* Garis vertikal penanda */
+        border-radius: 4px !important;
+        padding: 10px 14px !important;
+        font-size: 13.5px !important;
+    }
+
     .carousel-wrapper { height: 250px; }
     .carousel-indicators { bottom: 12px; }
     .indicator { width: 8px; height: 8px; }
