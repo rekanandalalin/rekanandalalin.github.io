@@ -76,7 +76,18 @@ body {
 .grid-2-services { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; }
 .grid-half { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 
-.cyber-card { background-color: var(--bg-card); border: 1px solid var(--border-dim); border-radius: 12px; padding: 40px 30px; transition: all 0.3s ease; }
+/* KUNCI: Perataan Tengah untuk Kartu Beranda */
+.cyber-card { 
+    background-color: var(--bg-card); 
+    border: 1px solid var(--border-dim); 
+    border-radius: 12px; 
+    padding: 40px 30px; 
+    transition: all 0.3s ease; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memastikan icon di tengah */
+    text-align: center;  /* Memastikan teks di tengah */
+}
 .cyber-card:hover { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 240, 255, 0.1); transform: translateY(-5px); }
 .cyber-card h3 { color: #fff; font-size: 20px; margin-bottom: 15px; font-weight: 600; }
 .cyber-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
@@ -92,7 +103,7 @@ body {
 /* --- PERBAIKAN IKON SHAPE DI BERANDA --- */
 .icon-shape { 
     opacity: 1; 
-    margin: 0 0 25px 0; /* Dikunci rata kiri agar sejajar dengan teks */
+    margin: 0 auto 25px auto; /* Kunci rata tengah absolut */
     display: block; 
 }
 .shape-rendah { 
@@ -100,8 +111,8 @@ body {
     height: 3px; 
     background-color: var(--neon-cyan); 
     transform: rotate(45deg); 
-    transform-origin: left center; /* Diberi titik tumpu agar rotasi tidak berantakan */
-    margin-bottom: 40px; 
+    transform-origin: center; /* Tumpuan di tengah agar rotasi seimbang */
+    margin-bottom: 35px; /* Kompensasi tinggi karena dia miring */
 }
 .shape-sedang { 
     width: 40px; 
@@ -146,17 +157,8 @@ body {
 .feature-box p { font-size: 16px; color: #fff; }
 .feature-box strong { color: var(--neon-cyan); }
 
-/* --- PERBAIKAN DESKTOP & MOBILE TABEL LIST KIRI KANAN --- */
-.list-label { 
-    flex: 0 0 110px; /* Lebar dikunci kuat */
-    width: 110px; 
-    font-weight: 700; 
-    color: var(--text-light); 
-}
-.list-text { 
-    flex: 1; 
-    line-height: 1.6; 
-}
+.list-label { flex: 0 0 110px; width: 110px; font-weight: 700; color: var(--text-light); }
+.list-text { flex: 1; line-height: 1.6; }
 
 /* --- TIMELINE STYLE UNTUK RIWAYAT PENDIDIKAN --- */
 .timeline-wrapper { position: relative; margin-top: 25px; padding-bottom: 10px; }
@@ -179,40 +181,13 @@ body {
 .diklat-list span { color: var(--text-muted); font-size: 13.5px; }
 
 /* --- GAYA KHUSUS HALAMAN KONTAK (FLEXBOX ALIGNMENT) --- */
-.contact-item {
-    display: flex;
-    align-items: flex-start; /* Mengunci agar ikon sejajar di atas dengan baris pertama teks */
-    gap: 20px;
-    padding: 25px;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
+.contact-item { display: flex; align-items: flex-start; gap: 20px; padding: 25px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; margin-bottom: 20px; }
 .contact-item:last-child { margin-bottom: 0; }
-.contact-icon {
-    flex: 0 0 28px;
-    color: var(--neon-cyan);
-    margin-top: 2px; /* Penyesuaian halus agar sejajar judul */
-}
+.contact-icon { flex: 0 0 28px; color: var(--neon-cyan); margin-top: 2px; }
 .contact-icon svg { width: 28px; height: 28px; }
-.contact-details {
-    flex: 1;
-    text-align: left;
-}
-.contact-details h4 {
-    color: var(--neon-cyan);
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-.contact-details p {
-    color: var(--text-light);
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 0;
-}
+.contact-details { flex: 1; text-align: left; }
+.contact-details h4 { color: var(--neon-cyan); font-size: 14px; letter-spacing: 1px; margin-bottom: 10px; text-transform: uppercase; }
+.contact-details p { color: var(--text-light); font-size: 15px; line-height: 1.6; margin: 0; }
 
 /* --- GAYA UNTUK FOOTER --- */
 .site-footer { text-align: center; padding: 30px 20px; margin-top: 60px; border-top: 1px solid var(--border-dim); color: var(--text-muted); font-size: 14px; letter-spacing: 0.5px; }
@@ -237,38 +212,11 @@ body {
     .glass-logo { height: 45px; }
     .cert-text { font-size: 10px; letter-spacing: 1px; }
     
-    /* --- PERBAIKAN FINAL MOBILE: Kunci Tabel Tetap Sejajar Kiri-Kanan --- */
-    .mechanism-list li {
-        flex-wrap: nowrap !important; /* HARGA MATI: Elemen tidak boleh anjlok/turun */
-        align-items: flex-start !important;
-        gap: 15px !important;
-    }
+    .mechanism-list li { flex-wrap: nowrap !important; align-items: flex-start !important; gap: 15px !important; }
     
-    .list-label {
-        flex: 0 0 100px !important; /* Lebar label dikunci pada 100px agar muat "Jalan Nasional" dll */
-        width: 100px !important;
-        margin: 0 !important;
-        white-space: normal; /* Mengizinkan teks panjang di dalam label lipat sendiri */
-    }
+    .list-label { flex: 0 0 100px !important; width: 100px !important; margin: 0 !important; white-space: normal; }
+    .list-text { flex: 1 1 auto !important; width: auto !important; margin: 0 !important; }
 
-    .list-text {
-        flex: 1 1 auto !important; 
-        width: auto !important; 
-        margin: 0 !important; /* Bebas dari margin aneh yang membuatnya bolong */
-    }
-
-    /* Khusus untuk List yang punya tanda Panah (Mekanisme) */
-    .mech-title, .mech-desc { 
-        flex: 1; 
-        min-width: 0; 
-        text-align: left; 
-        font-size: 13px; 
-        line-height: 1.5; 
-    }
-    .arrow-right { 
-        transform: none !important; 
-        margin: 0 6px !important; 
-        flex-shrink: 0; 
-        align-self: center; 
-    }
+    .mech-title, .mech-desc { flex: 1; min-width: 0; text-align: left; font-size: 13px; line-height: 1.5; }
+    .arrow-right { transform: none !important; margin: 0 6px !important; flex-shrink: 0; align-self: center; }
 }
