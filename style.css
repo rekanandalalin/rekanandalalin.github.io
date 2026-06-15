@@ -138,7 +138,6 @@ body {
     gap: 15px; 
     font-size: 14.5px; 
     border: 1px solid rgba(255,255,255,0.03); 
-    border-left: 3px solid var(--neon-cyan); 
     transition: all 0.3s ease; 
     flex-wrap: nowrap; 
     width: 100%;
@@ -147,7 +146,7 @@ body {
 }
 .mechanism-list li:hover { 
     border-color: rgba(0, 240, 255, 0.2); 
-    border-left-color: var(--neon-cyan);
+    border-left: 3px solid var(--neon-cyan); 
     background: rgba(0, 240, 255, 0.02); 
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transform: translateX(4px);
@@ -243,12 +242,14 @@ body {
 
 /* --- 9. GAYA FOOTER PREMIUM MULTI-KOLOM --- */
 .site-footer-rich {
-    background-color: #070b14; /* Sedikit lebih gelap dari background utama agar tegas */
+    background-color: #070b14; 
     border-top: 1px solid var(--border-dim);
     margin-top: 80px;
     padding-top: 60px;
     color: var(--text-muted);
     font-size: 14px;
+    width: 100%; /* Memaksa menyentuh ujung layar */
+    box-sizing: border-box; 
 }
 .footer-container {
     max-width: 1200px;
