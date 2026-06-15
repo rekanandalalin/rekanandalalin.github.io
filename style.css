@@ -152,7 +152,7 @@ body {
 }
 .mechanism-list li:hover { 
     border-color: rgba(0, 240, 255, 0.2); 
-    border-left-color: 2px solid var(--neon-cyan);
+    border-left: 3px solid var(--neon-cyan); 
     background: rgba(0, 240, 255, 0.02); 
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transform: translateX(4px);
