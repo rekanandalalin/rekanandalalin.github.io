@@ -125,16 +125,8 @@ body {
 .pulse-dot { width: 8px; height: 8px; background-color: var(--neon-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--neon-cyan); animation: pulse 2s infinite; flex-shrink: 0; margin-right: 8px; }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
 
-.mechanism-list { 
-    list-style: none; 
-    margin-top: 20px; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 16px; 
-    width: 100%; /* Memastikan lebar maksimum aman */
-}
+.mechanism-list { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 16px; width: 100%; }
 
-/* Transformasi Baris List Menjadi Pipeline Premium */
 .mechanism-list li { 
     background: rgba(255,255,255,0.01); 
     margin-bottom: 0; 
@@ -146,19 +138,21 @@ body {
     gap: 15px; 
     font-size: 14.5px; 
     border: 1px solid rgba(255,255,255,0.03); 
+    border-left: 3px solid var(--neon-cyan); 
     transition: all 0.3s ease; 
     flex-wrap: nowrap; 
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 .mechanism-list li:hover { 
     border-color: rgba(0, 240, 255, 0.2); 
-    border-left: 3px solid var(--neon-cyan); 
+    border-left-color: var(--neon-cyan);
     background: rgba(0, 240, 255, 0.02); 
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transform: translateX(4px);
 }
 
-/* KOTAK ANGKA: Kunci Mutlak Anti-Penyok */
 .mechanism-list span { 
     background: rgba(0, 240, 255, 0.1); 
     color: var(--neon-cyan); 
@@ -178,22 +172,20 @@ body {
     flex-shrink: 0 !important; 
 }
 
-/* KUNCI LEBAR AMAN: Kolom Kiri (Judul/Kriteria) */
 .mech-title, .list-label { 
-    flex: 0 0 200px; /* Lebar dikunci aman 200px agar tidak menjepit kolom kanan */
-    width: 200px; 
+    flex: 1 1 35%; 
+    min-width: 120px; 
+    max-width: 220px; 
     font-weight: 700; 
     color: #fff; 
     text-align: left;
 }
 
-/* Tanda Panah Pemisah */
 .arrow-right { color: var(--neon-cyan); margin: 0 10px; align-self: center; flex-shrink: 0; opacity: 0.5; }
 
-/* KOTAK KANAN: Kunci Anti-Melebar (Penjelasan) */
 .mech-desc, .list-text { 
-    flex: 1; 
-    min-width: 0; /* HARGA MATI: Mencegah kartu melebar ke kanan (out of bounds) */
+    flex: 1 1 65%; 
+    min-width: 0; 
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255,255,255,0.03);
     padding: 12px 18px;
@@ -201,7 +193,8 @@ body {
     color: var(--text-light);
     line-height: 1.6; 
     text-align: left;
-    display: block; /* Mengembalikan teks ke sifat natural agar melipat otomatis */
+    display: block; 
+    word-wrap: break-word; 
 }
 .mech-desc strong, .list-text strong { color: var(--neon-cyan); font-weight: 600; }
 
@@ -248,12 +241,142 @@ body {
 .indicator { width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.3); cursor: pointer; transition: 0.3s; border: 1px solid rgba(0, 0, 0, 0.2); }
 .indicator.active { background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); width: 28px; border-radius: 6px; }
 
-/* --- GAYA UNTUK FOOTER --- */
-.site-footer { text-align: center; padding: 30px 20px; margin-top: 60px; border-top: 1px solid var(--border-dim); color: var(--text-muted); font-size: 14px; letter-spacing: 0.5px; }
-.site-footer a { color: var(--neon-cyan); text-decoration: none; font-weight: 700; transition: 0.3s; }
-.site-footer a:hover { color: #fff; text-shadow: 0 0 10px var(--neon-cyan); }
+/* --- 9. GAYA FOOTER PREMIUM MULTI-KOLOM --- */
+.site-footer-rich {
+    background-color: #070b14; /* Sedikit lebih gelap dari background utama agar tegas */
+    border-top: 1px solid var(--border-dim);
+    margin-top: 80px;
+    padding-top: 60px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+.footer-heading {
+    color: var(--neon-cyan);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.footer-text {
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 14.5px;
+}
 
-/* --- 9. RESPONSIVE MOBILE SETTINGS --- */
+/* Kolom Logo */
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255,255,255,0.02);
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+    width: fit-content;
+}
+.footer-logos img {
+    height: 45px;
+    width: auto;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+    transition: 0.3s;
+}
+.footer-logos img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
+}
+
+/* Kolom Kontak */
+.footer-contact {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    line-height: 1.6;
+}
+.footer-contact svg {
+    width: 22px;
+    height: 22px;
+    color: var(--neon-cyan);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.footer-contact a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer-contact a:hover {
+    color: var(--neon-cyan);
+}
+
+/* Kolom Tenaga Ahli */
+.expert-info {
+    background: rgba(0, 240, 255, 0.03);
+    border-left: 3px solid var(--neon-cyan);
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+}
+.expert-name {
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+.expert-title {
+    color: var(--text-light);
+    font-size: 13.5px;
+    margin-bottom: 5px;
+}
+.expert-cert {
+    color: var(--neon-cyan);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Bilah Bawah Copyright */
+.footer-bottom {
+    border-top: 1px solid var(--border-dim);
+    padding: 25px 0;
+    background: #04070c;
+}
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13.5px;
+}
+.footer-bottom-content a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-weight: 700;
+}
+.footer-bottom-content a:hover {
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+
+/* --- 10. RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 900px) {
     .navbar { padding: 0 20px; justify-content: space-between; }
     .nav-links { position: absolute; top: 70px; left: -100%; width: 100%; background-color: rgba(5, 5, 5, 0.98); flex-direction: column; align-items: center; gap: 0; transition: left 0.3s ease; border-bottom: 1px solid var(--border-dim); }
@@ -271,16 +394,15 @@ body {
     .glass-logo { height: 45px; }
     .cert-text { font-size: 10px; letter-spacing: 1px; }
 
-    /* --- REKAYASA STRUKTUR MOBILE SUPER PREMIUM --- */
     .mechanism-list li { 
         flex-direction: row !important; 
         flex-wrap: wrap !important; 
         align-items: center !important; 
         gap: 0 !important; 
         padding: 18px !important;
+        max-width: 100% !important;
     }
     
-    /* Penguncian Ekstra untuk Kotak Angka di Mobile */
     .mechanism-list span {
         flex: 0 0 28px !important;
         width: 28px !important;
@@ -294,6 +416,7 @@ body {
     .mech-title, .list-label { 
         flex: 1 !important; 
         width: calc(100% - 40px) !important;
+        max-width: 100% !important;
         margin-bottom: 12px !important;
         font-size: 14.5px !important;
     }
@@ -303,6 +426,7 @@ body {
     .mech-desc, .list-text { 
         flex: 0 0 100% !important; 
         width: 100% !important; 
+        max-width: 100% !important;
         margin-left: 0 !important; 
         background: rgba(255,255,255,0.02) !important;
         border: none !important;
@@ -310,16 +434,24 @@ body {
         border-radius: 4px !important;
         padding: 12px 16px !important;
         font-size: 13.5px !important;
-        
-        /* Mengamankan pembatasan di mobile */
         min-width: 0 !important;
         min-height: auto !important; 
         display: block !important;
     }
 
-    /* Responsif Carousel */
     .carousel-wrapper { height: 250px; }
     .carousel-indicators { bottom: 12px; }
     .indicator { width: 8px; height: 8px; }
     .indicator.active { width: 20px; }
+
+    /* Responsif Footer */
+    .footer-grid {
+        grid-template-columns: 1fr; /* Susun ke bawah di HP */
+        gap: 40px;
+    }
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
 }
