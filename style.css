@@ -380,7 +380,7 @@ body {
 /* --- 10. RESPONSIVE MOBILE SETTINGS --- */
 @media (max-width: 900px) {
     .navbar { padding: 0 20px; justify-content: space-between; }
-    .nav-links { position: absolute; top: 70px; left: -100%; width: 100%; background-color: rgba(5, 5, 5, 0.98); flex-direction: column; align-items: center; gap: 0; transition: left 0.3s ease; border-bottom: 1px solid var(--border-dim); }
+    .nav-links { position: absolute; top: 70px; left: -100%; width: 100%; background-color: rgba(5, 5, 5, 0.98); flex-direction: column; align-items: center; gap: 0; transition: top 0.3s ease; border-bottom: 1px solid var(--border-dim); }
     .nav-links.show { left: 0; }
     .nav-links a { display: block; padding: 20px; width: 100%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
     .hamburger { display: flex; }
